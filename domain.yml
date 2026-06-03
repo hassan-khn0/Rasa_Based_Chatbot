@@ -1,0 +1,2337 @@
+version: "3.1"
+
+intents:
+- intent_0
+- intent_1
+- intent_2
+- intent_3
+- intent_4
+- intent_5
+- intent_6
+- intent_7
+- intent_8
+- intent_14
+- intent_15
+- intent_16
+- intent_17
+- intent_18
+- intent_19
+- intent_20
+- intent_21
+- intent_22
+- intent_23
+- intent_24
+- intent_25
+- intent_26
+- intent_27
+- intent_28
+- intent_29
+- intent_30
+- intent_31
+- intent_32
+- intent_33
+- intent_34
+- intent_35
+- intent_36
+- intent_37
+- intent_38
+- intent_39
+- intent_40
+- intent_41
+- intent_42
+- intent_43
+- intent_44
+- intent_45
+- intent_46
+- intent_47
+- intent_48
+- intent_49
+- intent_50
+- intent_51
+- intent_52
+- intent_53
+- intent_54
+- intent_55
+- intent_56
+- intent_57
+- intent_58
+- intent_59
+- intent_60
+- intent_61
+- intent_62
+- intent_63
+
+- intent_65
+- intent_66
+- intent_67
+- intent_68
+- intent_69
+- intent_70
+- intent_71
+- intent_72
+- intent_73
+- intent_74
+- intent_75
+- intent_76
+- intent_77
+- intent_78
+- intent_79
+- intent_80
+
+- intent_82
+- intent_83
+- intent_84
+- intent_85
+- intent_86
+- intent_87
+- intent_88
+- intent_89
+- intent_90
+- intent_91
+- intent_92
+- intent_93
+- intent_94
+- intent_95
+- intent_96
+- intent_97
+- intent_98
+- intent_99
+- intent_100
+- intent_101
+- intent_102
+- intent_103
+- intent_104
+- intent_105
+- intent_106
+- intent_107
+- intent_108
+- intent_109
+- intent_110
+- intent_111
+- intent_112
+- intent_113
+- intent_114
+- intent_115
+- intent_116
+- intent_117
+- intent_118
+- intent_119
+- intent_120
+- intent_121
+- intent_122
+- intent_123
+- intent_124
+- intent_125
+- intent_126
+- intent_127
+- intent_128
+- intent_129
+- intent_130
+- intent_131
+- intent_132
+- intent_133
+- intent_134
+- intent_135
+- intent_136
+- intent_137
+- intent_138
+- intent_139
+- intent_140
+- intent_141
+- intent_142
+- intent_143
+- intent_144
+- intent_145
+- intent_146
+- intent_147
+- intent_148
+- intent_149
+- intent_150
+- intent_151
+- intent_152
+- intent_153
+- intent_154
+- intent_155
+- intent_156
+- intent_157
+- intent_158
+- intent_159
+- intent_160
+- intent_161
+- intent_162
+- intent_163
+- intent_164
+- intent_165
+- intent_166
+- intent_167
+- intent_168
+- intent_169
+- intent_170
+- intent_171
+
+- intent_173
+- intent_174
+- intent_175
+- intent_176
+
+- intent_178
+- intent_179
+- intent_180
+- intent_181
+- intent_182
+- intent_183
+- intent_184
+
+- intent_186
+- intent_187
+- intent_188
+
+- intent_190
+- intent_191
+- intent_192
+
+- intent_194
+- intent_195
+- intent_196
+- intent_197
+- intent_198
+- intent_199
+- intent_200
+- intent_201
+- intent_202
+- intent_203
+- intent_204
+- intent_205
+- intent_206
+- intent_207
+- intent_208
+- intent_209
+- intent_210
+- intent_211
+- intent_212
+- intent_213
+- intent_214
+- intent_215
+- intent_216
+- intent_217
+- intent_218
+- intent_219
+- intent_220
+- intent_221
+- intent_222
+- intent_223
+- intent_224
+- intent_225
+- intent_226
+- intent_227
+
+- intent_229
+- intent_230
+- intent_231
+- intent_232
+- intent_233
+- intent_234
+- intent_235
+- intent_236
+- intent_237
+- intent_238
+- intent_239
+
+- intent_241
+- intent_242
+- intent_243
+
+- intent_245
+- intent_246
+- intent_247
+- intent_248
+- intent_249
+- intent_250
+- intent_251
+- intent_252
+- intent_253
+- intent_254
+- intent_255
+- intent_256
+
+
+- intent_259
+- intent_260
+
+- intent_262
+- intent_263
+- intent_264
+- intent_265
+- intent_266
+- intent_267
+- intent_268
+- intent_269
+- intent_270
+
+- intent_272
+- intent_273
+- intent_274
+- intent_275
+- intent_276
+- intent_277
+- intent_278
+- intent_279
+- intent_280
+- intent_281
+- intent_282
+- intent_283
+- intent_284
+- intent_285
+- intent_286
+- intent_287
+- intent_288
+- intent_289
+- intent_290
+- intent_291
+- intent_292
+- intent_293
+- intent_294
+- intent_295
+- intent_296
+- intent_297
+- intent_298
+- intent_299
+- intent_300
+- intent_301
+- intent_302
+- intent_303
+- intent_304
+- intent_305
+- intent_306
+- intent_307
+- intent_308
+- intent_309
+- intent_310
+- intent_311
+- intent_312
+- intent_313
+- intent_314
+- intent_315
+- intent_316
+- intent_317
+- intent_318
+- intent_319
+- intent_320
+- intent_321
+- intent_322
+- intent_323
+- intent_324
+- intent_325
+- intent_326
+- intent_327
+- intent_328
+- intent_329
+- intent_330
+- intent_331
+- intent_332
+- intent_333
+- intent_334
+- intent_335
+- intent_337
+- intent_338
+- intent_336
+- intent_339
+- intent_340
+- intent_341
+- intent_342
+- intent_343
+- intent_344
+- intent_345
+- intent_346
+- intent_347
+- intent_348
+- intent_349
+- intent_350
+- intent_351
+- intent_352
+- intent_353
+- intent_354
+- intent_355
+- intent_356
+- intent_357
+- intent_358
+- intent_359
+- intent_360
+- intent_361
+- intent_362
+- intent_363
+- intent_364
+- intent_365
+- intent_366
+- intent_367
+- intent_368
+- intent_369
+- intent_370
+- intent_371
+- intent_372
+- intent_373
+- intent_374
+- intent_375
+- intent_376
+- intent_377
+- intent_378
+- intent_379
+- intent_380
+- intent_381
+- intent_382
+- intent_383
+- intent_384
+- intent_385
+- intent_386
+- intent_387
+- intent_388
+- intent_389
+- intent_390
+- intent_391
+- intent_392
+- intent_393
+- intent_394
+- intent_395
+- intent_396
+- intent_397
+- intent_398
+- intent_399
+- intent_400
+- intent_401
+- intent_402
+- intent_403
+- intent_404
+- intent_405
+- intent_406
+- intent_407
+- intent_408
+- intent_409
+- intent_410
+- intent_411
+- intent_412
+- intent_413
+- intent_414
+- intent_415
+- intent_416
+- intent_417
+- intent_418
+- intent_419
+- intent_420
+- intent_421
+- intent_422
+- intent_423
+- intent_424
+- intent_425
+- intent_426
+- intent_427
+- intent_428
+- intent_429
+- intent_430
+- intent_431
+- intent_432
+- intent_433
+- intent_434
+- intent_435
+- intent_436
+- intent_437
+- intent_438
+- intent_439
+- intent_440
+- intent_441
+- intent_442
+- intent_443
+- intent_444
+- intent_445
+- intent_446
+- intent_447
+- intent_448
+- intent_449
+- intent_450
+- intent_451
+- intent_452
+- intent_453
+- intent_454
+- intent_455
+- intent_456
+- intent_457
+- intent_458
+- intent_459
+- intent_460
+- intent_461
+- intent_462
+- intent_463
+- intent_464
+- intent_465
+- intent_466
+- intent_467
+- intent_468
+- intent_469
+- intent_470
+- intent_471
+- intent_472
+- intent_473
+- intent_474
+- intent_475
+- intent_476
+- intent_477
+- intent_478
+- intent_479
+- intent_480
+- intent_481
+- intent_482
+- intent_483
+- intent_484
+- intent_485
+- intent_486
+- intent_487
+- intent_488
+- intent_489
+- intent_490
+- intent_491
+- intent_492
+- intent_493
+- intent_494
+- intent_495
+- intent_496
+- intent_497
+- intent_498
+- intent_499
+- intent_500
+- intent_501
+- intent_502
+- intent_503
+- intent_504
+- intent_505
+- intent_506
+- intent_507
+- intent_508
+- intent_509
+- intent_510
+- intent_511
+- intent_512
+- intent_513
+- intent_514
+- intent_515
+- intent_516
+- intent_517
+- intent_518
+- intent_519
+- intent_520
+- intent_521
+- intent_522
+- intent_523
+- intent_524
+- intent_525
+- intent_526
+- intent_527
+- intent_528
+- intent_529
+- intent_530
+- intent_531
+- intent_532
+- intent_533
+- intent_534
+- intent_535
+- intent_536
+- intent_537
+- intent_538
+- intent_539
+- intent_540
+- intent_541
+- intent_542
+- intent_543
+- intent_544
+- intent_545
+- intent_546
+- intent_547
+- intent_548
+- intent_549
+- intent_550
+- intent_551
+- intent_552
+- intent_553
+- intent_554
+- intent_555
+- intent_556
+- intent_557
+- intent_558
+- intent_559
+- intent_560
+- intent_561
+- intent_562
+- intent_563
+- intent_564
+- intent_565
+- intent_566
+- intent_567
+- intent_568
+- intent_569
+- intent_570
+- intent_571
+- intent_572
+- intent_573
+- intent_574
+- intent_575
+- intent_576
+- intent_577
+- intent_578
+- intent_579
+- intent_580
+- intent_581
+- intent_582
+- intent_583
+- intent_584
+- intent_585
+- intent_586
+- intent_587
+- intent_588
+- intent_589
+- intent_590
+- intent_591
+- intent_592
+- intent_593
+- intent_594
+- intent_595
+- intent_596
+- intent_597
+- intent_598
+- intent_599
+- intent_600
+- intent_601
+- intent_602
+- intent_603
+- intent_604
+- intent_605
+- intent_606
+- intent_607
+- intent_608
+- intent_609
+- intent_610
+- intent_611
+- intent_612
+- intent_613
+- intent_614
+- intent_615
+- intent_616
+- intent_617
+- intent_618
+- intent_619
+- intent_620
+- intent_621
+- intent_622
+- intent_623
+- intent_624
+- intent_625
+- intent_626
+- intent_627
+- intent_628
+- intent_629
+- intent_630
+- intent_631
+- nlu_fallback  
+
+
+responses:
+  utter_intent_0:
+  - text: "For MSc/PhD dues clearance is verified by Treasurer / Treasurers Nominee."
+  - text: "The Treasurer or their nominee checks dues clearance for MSc and PhD programs."
+  - text: "MSc/PhD dues are verified by the Treasurer or the designated nominee."
+  - text: "For postgraduate degrees, dues clearance is handled by the Treasurer or nominee."
+  - text: "The Treasurers office is responsible for confirming dues clearance for MSc/PhD cases."
+  - text: "Dues verification for MSc and PhD degrees is carried out by the Treasurer or nominee."
+
+  utter_intent_1:
+  - text: "Treasurer or Nominee verifies dues clearance before submission to Directorate of Post Graduates Studies"
+  - text: "The Treasurer or nominee confirms dues before the file is sent to Directorate of Post Graduates Studies."
+  - text: "Dues clearance is authenticated by the Treasurer or nominee prior to Directorate of Post Graduates Studies submission."
+  - text: "Before forwarding to Directorate of Post Graduates Studies, dues verification is done by the Treasurer or nominee."
+  - text: "The Treasurers office checks dues before the case goes to Directorate of Post Graduates Studies."
+  - text: "Directorate of Post Graduates Studies receives the file only after dues are verified by the Treasurer or nominee."
+
+  utter_intent_2:
+  - text: "Treasurer verifies account clearance for MSc Degree"
+  - text: "The Treasurer checks account clearance for MSc degree issuance."
+  - text: "Account clearance for MSc degrees is verified by the Treasurer."
+  - text: "The Treasurer is responsible for ensuring MSc account clearance."
+  - text: "MSc account-related verification is done by the Treasurers office."
+  - text: "For MSc degrees, account clearance is confirmed by the Treasurer."
+
+  utter_intent_3: 
+  - text: "Manager CMS performs document clearance in CMS"
+  - text: "Document clearance in CMS is carried out by the CMS Manager."
+  - text: "The CMS Manager handles document verification inside CMS."
+  - text: "All document clearances within CMS are performed by the CMS Manager."
+  - text: "The Manager of CMS oversees document clearance tasks."
+  - text: "Document-related clearance in CMS is handled by the CMS Manager."
+
+  utter_intent_4: 
+  - text: "CMS/Account Section verifies account clearance for BSc Degree"
+  - text: "Account clearance for the BSc degree is checked by CMS/Accounts."
+  - text: "The CMS or Accounts Section confirms BSc account-related verification."
+  - text: "BSc degree account clearance is processed by CMS/Accounts."
+  - text: "Verification of financial clearance for BSc degrees is done by CMS/Account Section."
+  - text: "The CMS/Accounts staff handle BSc account clearance procedures."
+
+  utter_intent_5: 
+  - text: "Treasurer or Nominee provides dues clearance for MSc/PhD verification"
+  - text: "Dues clearance for MSc/PhD degrees is given by the Treasurer or nominee."
+  - text: "The Treasurer’s office provides dues verification for MSc and PhD."
+  - text: "For postgraduate degrees, dues are cleared by the Treasurer or nominee."
+  - text: "MSc/PhD dues clearance is authorized by the Treasurer or nominee."
+  - text: "The person responsible for MSc/PhD dues clearance is the Treasurer or nominee."
+
+  utter_intent_6:
+  - text: "Directorate of Postgraduate Studies (DPGS) performs clearance verification for PhD Degrees"
+  - text: "PhD clearance verification is handled by DPGS."
+  - text: "DPGS checks and verifies all clearances for PhD degrees."
+  - text: "Clearance for PhD processing is reviewed by DPGS."
+  - text: "The Directorate of Postgraduate Studies conducts PhD clearance verification."
+  - text: "PhD degree clearance is overseen by DPGS."
+
+  utter_intent_7:
+  - text: "Hello! How can I help you today?"
+  - text: "Hi there! What can I do for you?"
+  - text: "Hey! How's it going?"
+  - text: "Greetings! How may I assist you?"
+  - text: "Assalam-o-Alaikum! How can I help you today?"
+
+  utter_intent_8:
+  - text: "Thank you for contacting us. Have a great day! 😊"
+  - text: "You're welcome! Take care and goodbye 👋"
+  - text: "Glad I could help. See you next time!"
+  - text: "Thanks! Feel free to come back anytime."
+
+  utter_intent_14:
+  - text: "Vice Chancellor provides the final approval/signature on a degree for the student."
+  - text: "The final signature on a degree is given by the Vice Chancellor."
+  - text: "Degree approval is completed with the Vice Chancellors signature."
+  - text: "The Vice Chancellor signs the degree as the final authority."
+  - text: "The last approval on any degree comes from the Vice Chancellor."
+  - text: "The VC provides the final authorization on a students degree."
+
+  utter_intent_15:
+  - text: "10 working days are required for obtaining a PhD Degree."
+  - text: "A PhD degree takes 10 working days to process."
+  - text: "Processing a PhD degree requires 10 working days."
+  - text: "The PhD issuance timeline is 10 working days."
+  - text: "It takes 10 official working days to obtain a PhD degree."
+  - text: "PhD degree processing duration is 10 working days."
+
+
+  utter_intent_16:
+  - text: "10 working days are needed to obtain a PhD Degree."
+  - text: "A PhD degree takes 10 working days to process."
+  - text: "Processing a PhD degree requires 10 working days."
+  - text: "The PhD issuance timeline is 10 working days."
+  - text: "It takes 10 official working days to obtain a PhD degree."
+  - text: "PhD degree processing duration is 10 working days."
+
+  utter_intent_17:
+  - text: "The legal opinion during a Duplicate Degree process is provided by Law Officer."
+  - text: "The Law Officer gives the legal opinion for duplicate degrees."
+  - text: "Legal opinion during duplicate degree issuance is issued by the Law Officer."
+  - text: "The Law Officer handles the legal review for duplicate degrees."
+  - text: "Duplicate degree legal verification is done by the Law Officer."
+  - text: "Law Officer is responsible for providing the legal opinion."
+
+  utter_intent_18:
+  - text: "Examination Section prepares the Degree List for BSc, MSc, and PhD degrees."
+  - text: "The Examination Section compiles the Degree List."
+  - text: "Degree List preparation is handled by the Examination Section."
+  - text: "Examination staff prepare the Degree List for all programs."
+  - text: "The Degree List is created by the Examination office."
+  - text: "Compilation of the Degree List is done by the Examination Section."
+
+  utter_intent_19:
+  - text: "The document is returned to Examination and then SSC for handover to student."
+  - text: "After signing, the document goes back to Examination and then to SSC for issuance."
+  - text: "The file is returned to Examination and forwarded to SSC for handover."
+  - text: "Documents are routed to Examination first, then passed to SSC for the student."
+  - text: "Once signed, it returns to Examination and then SSC distributes it."
+  - text: "The document is sent to Examination and finally to SSC for student pickup."
+
+  utter_intent_20:
+  - text: "The Controller of Examination forward degrees to Registrar."
+  - text: "The Controller of Examination sends the degrees to the Registrar."
+  - text: "Degrees are forwarded by the Controller to the Registrar."
+  - text: "Registrar receives degrees from the Controller of Examination."
+  - text: "Controller of Examination routes degree files to the Registrar."
+  - text: "The Controller transfers completed degrees to the Registrar."
+
+  utter_intent_21:
+  - text: "The fees is 1000/- for BSc degree."
+  - text: "The issuance fee for a BSc degree is Rs. 1000."
+  - text: "A BSc degree costs 1000 rupees."
+  - text: "The BSc degree fee is set at 1000/-."
+  - text: "You must pay Rs. 1000 for a BSc degree."
+  - text: "BSc degree issuance fee amounts to 1000 rupees."
+
+  utter_intent_22:
+  - text: "CMS/Accounts performs account clearance for BSc Degree processing."
+  - text: "Account clearance for BSc degrees is done by CMS/Accounts."
+  - text: "BSc account verification is handled by CMS or the Accounts Section."
+  - text: "The CMS/Accounts team checks BSc account clearance."
+  - text: "Financial clearance for BSc degrees is performed by CMS/Accounts."
+  - text: "CMS/Accounts is responsible for BSc account clearance."  
+
+  utter_intent_23:
+  - text: "Controller of Examination signs after the Assistant Controller during MSc degree processing."
+  - text: "The Controller signs the MSc file after the Assistant Controller."
+  - text: "In MSc processing, the Controller signs following the Assistant Controller."
+  - text: "The next signatory after the Assistant Controller is the Controller."
+  - text: "Controller of Examination signs right after the Assistant Controller for MSc degrees."
+  - text: "MSc degree documents are signed by the Controller after the Assistant Controller."
+
+  utter_intent_24:
+  - text: "For PhD Degree clearance, Directorate of PostGraduate Service checks record and research clearance."
+  - text: "Record and research clearance for PhD is verified by DPGS."
+  - text: "DPGS handles PhD research and record verification."
+  - text: "PhD clearance, including record and research checks, is done by DPGS."
+  - text: "The DPGS office confirms both research and record clearance for PhD degrees."
+  - text: "DPGS reviews research and record details during PhD processing."
+
+  utter_intent_25:
+  - text: "Designated Examination Staff prepares the Degree List in Examination Section."
+  - text: "The Degree List is prepared by designated staff in Examination."
+  - text: "Assigned Examination personnel compile the Degree List."
+  - text: "Degree List preparation is done by the Examination team."
+  - text: "Examination staff create and finalize the Degree List."
+  - text: "Specific Examination staff members prepare the Degree List."
+
+  utter_intent_26:
+  - text: "Registrar signs before the Vice Chancellor during degree approval."
+  - text: "The Registrar signs the degree prior to the Vice Chancellor."
+  - text: "Before the VC signs, the Registrar provides their signature."
+  - text: "Registrars signature comes right before the Vice Chancellors."
+  - text: "The Registrar is the signatory before the Vice Chancellor."
+  - text: "Degree documents are signed by the Registrar before going to the VC."
+
+  utter_intent_27:
+  - text: "The result declaration date during BSc Degree processing is verified by CMS/Accounts."
+  - text: "CMS/Accounts verifies the result declaration date for BSc processing."
+  - text: "The result declaration date is checked by the CMS/Accounts section."
+  - text: "CMS/Accounts confirms the BSc result declaration date."
+  - text: "Verification of the result declaration date is done by CMS/Accounts."
+  - text: "The CMS/Accounts office checks and validates the result declaration date."
+
+  utter_intent_28:
+  - text: "Assistant Controller of Examinations signs before the Controller of Examination during degree processing"
+  - text: "The Assistant Controller signs the degree file before the Controller."
+  - text: "Before the Controller signs, the Assistant Controller provides their signature."
+  - text: "The Assistant Controllers signature comes prior to the Controllers."
+  - text: "Degree processing requires Assistant Controllers signature before the Controller."
+  - text: "The Assistant Controller signs the document ahead of the Controller."
+
+  utter_intent_29:
+  - text: "5 working days are required for BSc Degree processing."
+  - text: "Processing a BSc degree takes 5 working days."
+  - text: "The BSc degree requires 5 official working days for completion."
+  - text: "BSc issuance time is 5 working days."
+  - text: "It takes 5 working days to finalize a BSc degree."
+  - text: "The processing duration for a BSc degree is 5 working days."
+
+  utter_intent_30:
+  - text: "Record verification for MSc Degree is performed by Directorate of PostGraduate Service."
+  - text: "MSc record verification is handled by DPGS."
+  - text: "DPGS checks academic records for MSc degree processing."
+  - text: "Record verification for MSc degrees is conducted by DPGS."
+  - text: "DPGS performs the verification of MSc records."
+  - text: "MSc degree record checking is carried out by DPGS."
+
+  utter_intent_32:
+  - text: To Examination and Student Services Centre.
+  utter_intent_33:
+  - text: Registrar forward degree to the vice chancellor
+  utter_intent_34:
+  - text: Processing time for MSc degree is 10 working days
+  utter_intent_35:
+  - text: CMS/Account Section is responsible for date of result declaration during degree processing?
+  utter_intent_36:
+  - text: The fees for MSc degree is 1000/-
+  utter_intent_37:
+  - text: Vice Chancellor performs final approval during degree processing
+  utter_intent_38:
+  - text: The processing time for PhD Degree is 10 working days
+  utter_intent_39:
+  - text: Registrar signs after Controller of Examination during degree approval.
+  utter_intent_40:
+  - text: Examination Section handles signature of Superintendent during degree list preparation.
+  utter_intent_41:
+  - text: Vice Chancellor approves the degree after Registrar and before return to Examination
+  utter_intent_42:
+  - text: The first step in BSc degree processing is to submit a request at Student Service Center.
+  utter_intent_43:
+  - text: Superintendent (Examination Section) check the degree list for BSc degree.
+  utter_intent_44:
+  - text: Registrar signature is required before VC approval for BSc Degree.
+  utter_intent_45:
+  - text: Treasurer verifies dues during MSc Degree processing
+  utter_intent_46:
+  - text: Assistant Controller of Examinations sigs after Superintendent in degree list preparation
+  utter_intent_47:
+  - text: Examination Section prepare the degree list for MSc degree. 
+  utter_intent_48:
+  - text: Step follows Registrar signature in degree processing is Vice Chancellor approval.
+  utter_intent_49:
+  - text: Fee receipt is required along with application for degree issuance.
+  utter_intent_50:
+  - text: The processing time for PhD degree issuance is 10 working days.
+  utter_intent_51:
+  - text: After Controller signature the degree is submitted to Registrar.
+  utter_intent_52:
+  - text: Vice chancellor do a last signature on a degree.
+  utter_intent_53:
+  - text: Record and dues clearance is checked in clearance verification for MSc degree.
+  utter_intent_54:
+  - text: The time required for MSc degree is 10 working days.
+  utter_intent_55:
+  - text: CMS or Account section check the date of result declaration for degree.
+  utter_intent_56:
+  - text: For BSc degree the fees is 1000, and the processing time is 5 working days.
+  utter_intent_57:
+  - text: For MSc degree the fees is 1000, and the processing time is 5 working days.
+  utter_intent_58:
+  - text: For PhD degree the fees is 1000, and the processing time is 5 working days.
+  utter_intent_59:
+    - text: "Yes, BSc, MSc, and PhD degrees can be verified at the Student Service Center (SSC). This service confirms the authenticity of issued degrees."
+  utter_intent_60:
+    - text: "Yes, the Examination Office issues final degrees for BSc, MSc, and PhD programs after completion of all requirements."
+  utter_intent_61:
+    - text: "Transcripts are available for BSc, MSc, and PhD students and can be requested through the SSC."
+  utter_intent_62:
+    - text: "To obtain your BSc degree, submit an application and fee at the SSC. The request is processed through the Examination Section, CMS/Accounts, Controller offices, and finally approved by the VC."
+  utter_intent_63:
+    - text: "The BSc degree issuance process usually takes about 5 working days once all requirements are fulfilled."
+
+  utter_intent_65:
+    - text: "To get your MSc degree, submit an application and fee at the SSC. The case is processed through Examination, Treasurer, DPGS, Controller, Registrar, and VC."
+  utter_intent_66:
+    - text: "MSc degree issuance normally takes 10 working days due to multiple verification steps."
+  utter_intent_67:
+    - text: "The fee for MSc degree issuance is 1000 PKR."
+  utter_intent_68:
+    - text: "For a PhD degree, submit your application and fee at the SSC. It undergoes verification by Examination, Treasurer, DPGS, and senior university authorities."
+  utter_intent_69:
+    - text: "PhD degree issuance takes approximately 10 working days because of detailed academic and administrative checks."
+  utter_intent_70:
+    - text: "The fee for PhD degree issuance is 2000 PKR."
+  utter_intent_71:
+    - text: "Yes, all financial and departmental dues must be cleared before your degree can be processed."
+  utter_intent_72:
+    - text: "The degree is signed by the Assistant Controller, Controller, Registrar, and Vice Chancellor before issuance."
+  utter_intent_73:
+    - text: "Yes, degrees must be collected in person from the SSC to ensure secure delivery."
+  utter_intent_74:
+    - text: "Someone else can collect your degree only with proper authorization and valid identification."
+  utter_intent_75:
+    - text: "Degree applications must be submitted at the Student Service Center (SSC)."
+  utter_intent_76:
+    - text: "Before VC approval, the Assistant Controller, Controller, and Registrar sign the degree."
+  utter_intent_77:
+    - text: "PhD degree processing takes 10 working days, allowing time for verification, dues clearance, and final VC approval."
+  utter_intent_78:
+    - text: "Yes, you can apply for a duplicate degree through the SSC. The process includes verification, legal opinion, and VC approval."
+  utter_intent_79:
+    - text: "If you find your original degree after receiving a duplicate, you must return the original to the Examination Office. The duplicate remains valid."
+  utter_intent_80:
+    - text: "Degrees are not mailed. They must be collected from SSC. However, you may authorize someone else with proper documents."
+
+  utter_intent_82:
+    - text: "Final approval for issuing a duplicate degree is granted by the Vice Chancellor."
+  utter_intent_83:
+    - text: "During duplicate degree processing, CMS is responsible for clearing any outstanding dues."
+  utter_intent_84:
+    - text: "The Superintendent Exam checks academic records during duplicate degree processing."
+  utter_intent_85:
+    - text: "Legal opinion for duplicate degree cases is handled by the Law Officer."
+  utter_intent_86:
+    - text: "The processing time for a duplicate degree is not fixed and depends on verification and approvals."
+  utter_intent_87:
+    - text: "The Vice Chancellor issues the final approval for duplicate degrees."
+  utter_intent_88:
+    - text: "Final approval authority for duplicate degrees rests with the Vice Chancellor."
+  utter_intent_89:
+    - text: "The Law Officer verifies and approves legal documents during duplicate degree processing."
+  utter_intent_90:
+    - text: "Duplicate or revised degree fees vary, usually 1000 PKR for BSc/MSc and 2000 PKR for PhD, with processing time depending on verification."
+  utter_intent_91:
+    - text: "To apply for a duplicate degree, submit a formal request at the SSC for verification and approval."
+  utter_intent_92:
+    - text: "Duplicate degree processing includes CMS clearance, legal verification, signatures from authorities, and VC approval."
+  utter_intent_93:
+    - text: "The duplicate degree process involves verification, legal opinion, approvals, and final handover."
+  utter_intent_94:
+    - text: "The time required for a duplicate degree varies depending on document verification and approvals."
+  utter_intent_95:
+    - text: "The fee for a duplicate degree is usually 1000 PKR for BSc/MSc and 2000 PKR for PhD."
+  utter_intent_96:
+    - text: "Yes, legal verification is mandatory for issuing a duplicate degree."
+  utter_intent_97:
+    - text: "Duplicate degrees are approved by the Vice Chancellor."
+  utter_intent_98:
+    - text: "Requests for duplicate degrees must be submitted at the SSC."
+  utter_intent_99:
+    - text: "A revised degree follows a process similar to that of a duplicate degree, including verification and approvals."
+  utter_intent_100:
+    - text: "Yes, a duplicate degree is an official copy of the original degree and has the same legal and academic value."
+  utter_intent_101:
+    - text: "Urgent duplicate degree requests may be possible. Please confirm availability and timelines directly with the SSC."
+  utter_intent_102:
+    - text: "The duplicate degree fee is usually 1000 PKR for BSc/MSc and 2000 PKR for PhD programs."
+  utter_intent_103:
+    - text: "Fees are paid online through the Campus Management System (CMS). Bring the payment receipt to the SSC for processing."
+  utter_intent_104:
+    - text: "Yes, a payment receipt is issued by CMS/SSC after successful payment and is mandatory for processing your request."
+  utter_intent_105:
+    - text: "Fees are mostly the same across programs. Degree issuance costs 1000 PKR for BSc/MSc and 2000 PKR for PhD, while document verification has a fixed fee."
+  utter_intent_106:
+    - text: "Payments are primarily accepted through CMS online portal. Some cash payments may be accepted at designated counters—confirm with SSC."
+  utter_intent_107:
+    - text: "For an MSc final transcript, submit an application form, fee receipt, BOASAR notification, clearance certificate, and defense exam result."
+  utter_intent_108:
+    - text: "The ordinary fee for an MSc final transcript is 1000 PKR."
+  utter_intent_109:
+    - text: "Result verification for BSc final transcripts is handled by the Secrecy Section."
+  utter_intent_110:
+    - text: "Research title accuracy for MSc final transcripts is verified by the Secrecy Section."
+  utter_intent_111:
+    - text: "Final transcripts are returned to students through the Student Service Center (SSC)."
+  utter_intent_112:
+    - text: "The ordinary fee for a PhD final transcript is 1000 PKR."
+  utter_intent_113:
+    - text: "The processing time for a BSc final transcript is typically 2 working days."
+  utter_intent_114:
+    - text: "CMS is responsible for dues clearance and repeat code verification during BSc final transcript preparation."
+  utter_intent_115:
+    - text: "BOASAR notification is required in addition to the fee receipt for MSc final transcript processing."
+  utter_intent_116:
+    - text: "The MSc research title is verified by the Secrecy Section to ensure academic accuracy."
+  utter_intent_117:
+    - text: "The fee for a BSc final transcript is 1500 PKR in urgent cases."
+  utter_intent_118:
+    - text: "Designated Secrecy Section staff prepare the final result during BSc transcript processing."
+  utter_intent_119:
+    - text: "Final result records are checked during BSc transcript preparation to ensure correctness."
+  utter_intent_120:
+    - text: "BOASAR notification is required along with clearance for PhD final transcript processing."
+  utter_intent_121:
+    - text: "The ordinary fee for a BSc final transcript is 1000 PKR."
+  utter_intent_122:
+    - text: "Final transcript verification before Controller’s signature is done by the Secrecy Section."
+  utter_intent_123:
+    - text: "CMS checks repeat code issues during BSc final transcript processing."
+  utter_intent_124:
+    - text: "Secrecy Section verifies defense examination results for MSc and PhD transcripts."
+  utter_intent_125:
+    - text: "PhD final transcript processing takes approximately 2 working days."
+  utter_intent_126:
+    - text: "BOASAR notification is mandatory for issuing a PhD final transcript."
+  utter_intent_127:
+    - text: "Final transcript results for BSc are verified by the Secrecy Section."
+  utter_intent_128:
+    - text: "SSC is responsible for returning the final transcript to the student after processing."
+  utter_intent_129:
+    - text: "For MSc transcripts involving defense results, a clearance document is required."
+  utter_intent_130:
+    - text: "BSc final transcript processing takes 2 working days and costs 1000 PKR for ordinary and 1500 PKR for urgent requests."
+  utter_intent_131:
+    - text: "MSc final transcript processing takes 2 working days with a fee of 1000 PKR (ordinary) or 1500 PKR (urgent)."
+  utter_intent_132:
+    - text: "PhD final transcript processing also takes 2 working days and costs 1000 PKR (ordinary) or 1500 PKR (urgent)."
+  utter_intent_133:
+    - text: "To obtain a BSc final transcript, submit an application and fee receipt at SSC for verification and approval."
+  utter_intent_134:
+    - text: "BSc final transcript processing usually completes within 2 working days."
+  utter_intent_135:
+    - text: "The BSc final transcript fee is 1000 PKR for ordinary and 1500 PKR for urgent requests."
+  utter_intent_136:
+    - text: "Yes, urgent BSc final transcript services are available for an additional fee."
+  utter_intent_137:
+    - text: "To get an MSc final transcript, submit your application, fee receipt, and required documents at SSC."
+  utter_intent_138:
+    - text: "MSc final transcript processing time is approximately 2 working days."
+  utter_intent_139:
+    - text: "The fee for an MSc final transcript is 1000 PKR (ordinary) or 1500 PKR (urgent)."
+  utter_intent_140:
+    - text: "Yes, urgent MSc final transcript services are available."
+  utter_intent_141:
+    - text: "PhD final transcripts are requested by submitting an application, fee receipt, and documents at SSC."
+  utter_intent_142:
+    - text: "PhD final transcript processing takes around 2 working days."
+  utter_intent_143:
+    - text: "The fee for a PhD final transcript is 1000 PKR (ordinary) or 1500 PKR (urgent)."
+  utter_intent_144:
+    - text: "Yes, urgent PhD final transcript services are available."
+  utter_intent_145:
+    - text: "Yes, an application form, fee receipt, and supporting documents are required for transcript processing."
+  utter_intent_146:
+    - text: "All final transcripts are collected from the Student Service Center (SSC)."
+  utter_intent_147:
+    - text: "The Controller of Examinations signs all final transcripts."
+  utter_intent_148:
+    - text: "For MSc final transcripts, submit an application form, fee receipt, BOASAR notification, clearance certificate, and defense result."
+  utter_intent_149:
+    - text: "The Secrecy Section carefully verifies transcript details including grades, research titles, and personal data."
+  utter_intent_150:
+    - text: "Transcript delays usually occur due to incomplete documents or pending clearance checks."
+  utter_intent_151:
+    - text: "Yes, final transcripts are official documents accepted for jobs, admissions, and immigration purposes."
+  utter_intent_152:
+    - text: "The standard processing time for a BSc final transcript is 2 working days."
+  utter_intent_153:
+    - text: "I am the Examination Office chatbot, here to assist you with transcripts, degrees, and verification services."
+  utter_intent_154:
+    - text: "The Examination Office provides transcript issuance, degree processing, verification, and duplicate degree services."
+  utter_intent_155:
+    - text: "I can assist you with information about transcripts, degrees, fees, processing times, and examination-related services."
+  utter_intent_156:
+    - text: "The Student Service Center (SSC) is the main office where students submit applications, make payments, and collect documents."
+  utter_intent_157:
+    - text: "CMS is the Campus Management System used for fee payments, clearance status, and application tracking."
+  utter_intent_158:
+    - text: "The Controller of Examinations oversees all examination-related processes and signs official academic documents."
+  utter_intent_159:
+    - text: "SSC office hours are typically Monday to Friday, 8:30 AM to 4:00 PM. Confirm timings before visiting."
+  utter_intent_160:
+    - text: "You can contact the Examination Office by visiting the SSC during working hours for transcript and degree queries."
+
+  utter_intent_170:
+    - text: "The urgent fee for a PhD interim transcript is 1500 PKR, which allows faster processing."
+  utter_intent_171:
+    - text: "An MSc interim transcript usually takes 3 working days to process."
+
+  utter_intent_173:
+    - text: "The urgent fee for a BSc interim transcript is 1500 PKR."
+  utter_intent_174:
+    - text: "A PhD interim transcript is processed within 3 working days."
+  utter_intent_175:
+    - text: "The ordinary fee for a BSc interim transcript is 1000 PKR."
+  utter_intent_176:
+    - text: "The ordinary fee for an MSc interim transcript is 1000 PKR."
+
+  utter_intent_178:
+    - text: "A BSc interim transcript is usually prepared within 1 working day."
+  utter_intent_179:
+    - text: "The ordinary fee for a PhD interim transcript is 1000 PKR."
+  utter_intent_180:
+    - text: "The Secrecy Section is responsible for preparing MSc interim transcripts."
+  utter_intent_181:
+    - text: "The BSc interim transcript takes 1 working day and costs 1000 PKR (ordinary) or 1500 PKR (urgent)."
+  utter_intent_182:
+    - text: "The MSc interim transcript takes 3 working days and costs 1000 PKR (ordinary) or 1500 PKR (urgent)."
+  utter_intent_183:
+    - text: "The PhD interim transcript takes 3 working days and costs 1000 PKR (ordinary) or 1500 PKR (urgent)."
+  utter_intent_184:
+    - text: "To get a BSc interim transcript, submit your application form and fee receipt at SSC. It is signed by the Controller of Examinations."
+
+  utter_intent_186:
+    - text: "The BSc interim transcript fee is 1000 PKR for ordinary and 1500 PKR for urgent requests."
+  utter_intent_187:
+    - text: "Yes, urgent BSc interim transcript service is available for an additional fee."
+  utter_intent_188:
+    - text: "For an MSc interim transcript, submit the application form and fee receipt at SSC for verification and signature."
+
+  utter_intent_190:
+    - text: "The MSc interim transcript fee is 1000 PKR (ordinary) or 1500 PKR (urgent)."
+  utter_intent_191:
+    - text: "Yes, urgent MSc interim transcript services are available at SSC."
+  utter_intent_192:
+    - text: "To obtain a PhD interim transcript, submit your application and fee receipt at SSC for verification and approval."
+
+  utter_intent_194:
+    - text: "The PhD interim transcript fee is 1000 PKR for ordinary and 1500 PKR for urgent processing."
+  utter_intent_195:
+    - text: "Yes, urgent PhD interim transcript services are available for an extra fee."
+  utter_intent_196:
+    - text: "All interim transcript applications must be submitted at the Student Service Centre (SSC)."
+  utter_intent_197:
+    - text: "Interim transcript payments are made through the CMS system at SSC."
+  utter_intent_198:
+    - text: "All interim transcripts are signed by the Controller of Examinations."
+  utter_intent_199:
+    - text: "For a BSc interim transcript, submit the application and fee receipt at SSC. The Secrecy Section prepares it, and it is signed by the Controller within 1 working day."
+  utter_intent_200:
+    - text: "Urgent transcripts can be requested at SSC. The urgent fee is 1500 PKR for BSc, MSc, and PhD."
+  utter_intent_201:
+    - text: "Yes, interim transcripts are issued to students who have not yet completed their degree, showing academic progress to date."
+  utter_intent_202:
+    - text: "An interim transcript shows progress before degree completion, while a final transcript is issued after degree completion."
+  utter_intent_203:
+    - text: "The urgent fee for a PhD interim transcript is 1500 PKR, ensuring faster processing than the ordinary request."
+  utter_intent_204:
+    - text: "Yes, documents can be collected by an authorized person with a valid authorization letter and ID copies."
+  utter_intent_205:
+    - text: "If you face any application issues, visit the SSC staff who will guide you and resolve the problem."
+  utter_intent_206:
+    - text: "Applications are generally submitted in person at SSC, though fee payments can be made online via CMS."
+  utter_intent_207:
+    - text: "Uncollected documents are safely kept at SSC and can be collected later during office hours."
+  utter_intent_208:
+    - text: "If the process seems confusing, SSC staff are available to guide you step by step for your specific case."
+  utter_intent_209:
+    - text: "For special or exceptional cases, SSC staff will direct you to the appropriate senior officer."
+  utter_intent_210:
+    - text: "There is no separate helpline number; for case-specific issues, visiting SSC during office hours is recommended."
+  utter_intent_211:
+    - text: "The Secrecy Section checks grades against the register for MSc transcripts."
+  utter_intent_212:
+    - text: "The Secrecy Section verifies the students name and grades during transcript preparation."
+  utter_intent_213:
+    - text: "During transcript processing, results, student name, and grades are checked against the official register."
+  utter_intent_214:
+    - text: "After final signature, the transcript is returned to the Student Service Centre (SSC)."
+  utter_intent_215:
+    - text: "The Controller of Examinations provides the final signature on all transcripts."
+  utter_intent_216:
+    - text: "CMS is responsible for checking repeat codes during BSc transcript processing."
+  utter_intent_217:
+    - text: "Grade entries are verified with the register by the Secrecy Section."
+  utter_intent_218:
+    - text: "The Superintendent Exam checks and verifies transcripts with official records."
+  utter_intent_219:
+    - text: "Yes, the Examination Office issues both interim and final transcripts for BSc programs."
+  utter_intent_220:
+    - text: "Yes, MSc interim and final transcripts are provided by the Examination Office."
+  utter_intent_221:
+    - text: "Yes, PhD interim and final transcripts are issued through the Examination Office."
+  utter_intent_222:
+    - text: "Transcript status can currently be tracked by visiting or contacting the SSC."
+  utter_intent_223:
+    - text: "Transcript fees are 1000 PKR for ordinary requests and 1500 PKR for urgent processing."
+  utter_intent_224:
+    - text: "Yes, transcript fees can be paid online through the CMS portal."
+  utter_intent_225:
+    - text: "Mandatory documents include the application form, fee receipt, and any additional documents required by SSC."
+  utter_intent_226:
+    - text: "The Registrar provides the counter signature on verification documents."
+  utter_intent_227:
+    - text: "BSc document verification requests are processed within 4 working days."
+
+  utter_intent_229:
+    - text: "Degrees and transcripts are checked by the Superintendent Exam during verification."
+  utter_intent_230:
+    - text: "For MSc and PhD verification, the dues statement is issued by the Directorate of Postgraduate Studies (DPGS)."
+  utter_intent_231:
+    - text: "MSc document verification processing takes approximately 8 working days."
+  utter_intent_232:
+    - text: "The document verification fee for MSc and PhD is 2000 PKR."
+  utter_intent_233:
+    - text: "After the Treasurer, verification documents are signed by the Directorate of Postgraduate Studies."
+  utter_intent_234:
+    - text: "For BSc verification, dues clearance is verified by the CMS Manager."
+  utter_intent_235:
+    - text: "After Superintendent Exam, BSc verification documents are signed by the Assistant Controller of Examinations."
+  utter_intent_236:
+    - text: "During MSc and PhD verification, dues statements are checked by DPGS."
+  utter_intent_237:
+    - text: "Degrees and transcripts are verified against records by the Superintendent Exam."
+  utter_intent_238:
+    - text: "The Registrar provides the official counter signature on verification documents."
+
+  utter_intent_239:
+    - text: "Clearance verification for an MSc degree is handled by the Treasurer, who ensures all financial dues are cleared."
+
+  utter_intent_241:
+    - text: "After the Registrar signs, the verification is returned to the Examination Office and SSC for further handling."
+
+  utter_intent_242:
+    - text: "During MSc verification, degrees and transcripts are verified against official records."
+
+  utter_intent_243:
+    - text: "Once verification is complete, the documents are returned to SSC for final handover to the applicant."
+
+  utter_intent_245:
+    - text: "The dues statement for MSc verification is checked by the Directorate of Postgraduate Studies (DPGS)."
+
+  utter_intent_246:
+    - text: "The fee for BSc verification of documents is 2000 PKR."
+
+  utter_intent_247:
+    - text: "After the Assistant Controller, the Controller of Examinations signs the verification documents."
+
+  utter_intent_248:
+    - text: "For BSc verification, dues are checked and verified by the Manager CMS."
+
+  utter_intent_249:
+    - text: "During Secrecy verification, results, grades, and student names are thoroughly checked."
+
+  utter_intent_250:
+    - text: "Before the Registrar signs, dues are checked and verified by the Treasurer."
+
+  utter_intent_251:
+    - text: "After processing, PhD verification documents are returned to the Examination Office and SSC."
+
+  utter_intent_252:
+    - text: "The Assistant Controller of Examinations provides the initial signature in the verification process."
+
+  utter_intent_253:
+    - text: "After DPGS verification, the Treasurer signs the documents as part of the approval process."
+
+  utter_intent_254:
+    - text: "BSc document verification takes 4 working days and costs 2000 PKR."
+
+  utter_intent_255:
+    - text: "MSc and PhD document verification takes 8 working days with a verification fee of 2000 PKR."
+
+  utter_intent_256:
+    - text: "To verify BSc documents, submit them at SSC. They are checked by Superintendent Exam, Assistant Controller, CMS Manager, Controller, and Registrar."
+
+  utter_intent_259:
+    - text: "For MSc or PhD verification, submit documents at SSC. The process involves Superintendent Exam, Assistant Controller, Treasurer/DPGS, Controller, and Registrar."
+
+  utter_intent_260:
+    - text: "MSc and PhD document verification takes approximately 8 working days."
+
+  utter_intent_262:
+    - text: "Yes, original documents must be presented for document verification."
+
+  utter_intent_263:
+    - text: "All verification documents must be submitted at the Student Service Centre (SSC)."
+
+  utter_intent_264:
+    - text: "Documents are verified by Superintendent Exam, Assistant Controller, Treasurer or DPGS, Controller, and Registrar."
+
+  utter_intent_265:
+    - text: "Urgent document verification is not standard. Please check with SSC for special cases."
+
+  utter_intent_266:
+    - text: "Document verification costs 2000 PKR as a standard fee."
+
+  utter_intent_267:
+    - text: "For job-related verification, submit original documents at SSC. BSc verification takes 4 days, MSc/PhD takes 8 days, with a fee of 2000 PKR."
+
+  utter_intent_268:
+    - text: "MSc and PhD verification takes longer because it involves additional checks such as research title validation and DPGS clearance."
+
+  utter_intent_269:
+    - text: "Yes, verified documents meet national and international standards and are accepted worldwide."
+
+  utter_intent_270:
+    - text: "If you find an error in verified documents, immediately contact SSC with originals for correction."
+
+  utter_intent_272:
+    - text: "My name is Chatbot. How may I help you today?"
+
+  utter_intent_273:
+    - text: "The Secrecy Section checks and verifies the register during transcript preparation."
+
+  utter_intent_274:
+    - text: "The first step in any service process starts at the Student Service Center (SSC)."
+
+  utter_intent_275:
+    - text: "Research title accuracy is checked by the Secrecy Section to ensure correctness."
+
+  utter_intent_276:
+    - text: "Approval of research defense is indicated by the Defense Examination Result document."
+
+  utter_intent_277:
+    - text: "Repeat codes are processed and checked by the Campus Management System (CMS)."
+
+  utter_intent_278:
+    - text: "The Examination Office provides transcripts, certificates, degree issuance, duplicate degrees, and document verification services."
+
+  utter_intent_279:
+    - text: "You can obtain interim transcripts, final transcripts, certificates, degree verification, final degrees, and duplicate degrees."
+
+  utter_intent_280:
+    - text: "Yes, various academic certificates can be requested from the Examination Office."
+
+  utter_intent_281:
+    - text: "Yes, urgent services usually require an additional fee of around 500 PKR."
+
+  utter_intent_282:
+    - text: "Payments at SSC are made through CMS or as guided by SSC staff."
+
+  utter_intent_283:
+    - text: "Fees may differ depending on the degree level and type of service requested."
+
+  utter_intent_284:
+    - text: "Yes, a payment receipt is issued by CMS or SSC after successful payment."
+
+  utter_intent_285:
+    - text: "Payments are usually made online via CMS, but check with SSC for cash options."
+
+  utter_intent_286:
+    - text: "There are no hidden charges. All fees are officially announced."
+
+  utter_intent_287:
+    - text: "Application forms must be submitted at the Student Service Centre (SSC)."
+
+  utter_intent_288:
+    - text: "Yes, original documents are required for verification and transcript processing."
+
+  utter_intent_289:
+    - text: "Copies may be accepted in some cases, but original documents are often mandatory."
+
+  utter_intent_290:
+    - text: "SSC will notify you once your request has been processed and completed."
+
+  utter_intent_291:
+    - text: "Currently, application status can be tracked by contacting or visiting SSC."
+
+  utter_intent_292:
+    - text: "For any application-related issues, please contact SSC staff for assistance."
+
+  utter_intent_293:
+    - text: "Applications must be submitted during SSC office hours only."
+
+  utter_intent_294:
+    - text: "SSC provides official application form templates for all services."
+
+  utter_intent_295:
+    - text: "Applications are normally submitted in person. Please confirm with SSC for exceptions."
+
+  utter_intent_296:
+    - text: "SSC stands for Student Service Centre, the main hub for all student-related services."
+
+  utter_intent_297:
+    - text: "CMS is the Campus Management System used for fee payment, clearance, and tracking."
+
+  utter_intent_298:
+    - text: "The Controller of Examinations oversees examination processes and signs official documents."
+
+  utter_intent_299:
+    - text: "Processing times vary: Interim transcripts 1 to 3 days, final transcripts 2 days, degrees 5 to 10 days, verification 4 to 8 days."
+
+  utter_intent_300:
+    - text: "Yes, SSC staff are always available to help if you find the process confusing."
+
+  utter_intent_301:
+    - text: "Some services such as fee payment are available online through CMS."
+
+  utter_intent_302:
+    - text: "SSC operates on official university working days, usually Monday to Friday."
+
+  utter_intent_303:
+    - text: "Yes, you can request multiple services, but each requires a separate application."
+
+  utter_intent_304:
+    - text: "For urgent requests, contact SSC staff directly. Additional fees may apply."
+
+  utter_intent_305:
+    - text: "Thank you! It was nice chatting with you. Have a great day!"
+
+  utter_intent_306:
+    - text: "Thank you! Nice to chat with you as well."
+
+  utter_intent_307:
+    - text: "Bye! Take care and feel free to come back if you need help."
+
+  utter_intent_308:
+    - text: "Thanks! Nice to chat with you too."
+
+  utter_intent_309:
+    - text: "CMS stands for Course Management System. It is used to manage student records, track applications, and facilitate services at the Student Service Center."
+    - text: "At SSC, CMS helps students submit forms, check application status, and request transcripts or degree verification."
+
+  utter_intent_310:
+    - text: "A final transcript is the official academic record issued after a student has completed all degree requirements. It includes all courses, grades, and the awarded degree."
+    - text: "Final transcripts are used for job applications, further studies, or official verification of your degree."
+
+  utter_intent_311:
+    - text: "An interim transcript is a temporary record of your academic performance before the final degree is issued. It shows completed courses and grades so far."
+    - text: "You can use an interim transcript for provisional job applications or admission processes before receiving your final transcript."
+
+  utter_intent_312:
+    - text: "The Student Service Center (SSC) helps students with services like degree verification, transcript issuance, document submission, and application tracking."
+    - text: "SSC provides a centralized point for students to submit requests, pay fees, and receive official documents efficiently."
+
+  utter_intent_313:
+    - text: "The Examination Section manages all academic records, conducts verification, prepares transcripts, and ensures correct issuance of certificates and degrees."
+    - text: "This section handles grading records, repeat codes, defense results, and approves final documents before issuance."
+
+  utter_intent_314:
+    - text: "CMS at SSC organizes student records, manages requests for transcripts and degrees, and tracks the progress of submitted applications."
+    - text: "It ensures accurate record-keeping, automates verification processes, and supports the workflow of SSC services."
+
+  utter_intent_315:
+    - text: "Yes, you can submit applications, request transcripts, or check your application status through CMS at SSC."
+    - text: "CMS allows students to submit forms online or in-person, track requests, and receive notifications about document processing."
+
+  utter_intent_316:
+    - text: "SSC provides services like degree and transcript issuance, document verification, duplicate certificates, and help with academic records."
+    - text: "It acts as a one-stop center for students to manage official requests and inquiries related to their academic documents."
+
+  utter_intent_317:
+    - text: "SSC is staffed with officers and clerks who assist students with forms, document verification, and processing of requests."
+    - text: "You can approach the SSC staff for help with transcripts, duplicate degrees, verification, and any special service requests."
+
+  utter_intent_318:
+    - text: "SSC can issue final and interim transcripts, degree verification, duplicate certificates, and other official academic documents."
+    - text: "Students can request transcripts, degree verification, or other certificates directly from SSC by submitting the required forms and fees."
+
+  utter_intent_319:
+    - text: |
+        **BSc Degree Issuance Procedure (5 working days, fee 1000/-):**
+        1. Request received at SSC (Application form + Fee Receipt)
+        2. Examination Section: Degree list prepared and checked with Superintendent's signature
+        3. CMS/Account Section: Account clearance and date of result declaration
+        4. Assistant Controller of Examinations: Signature and forward to Controller
+        5. Controller of Examinations: Signature and forward to Registrar
+        6. Registrar: Signature and forward to VC
+        7. Vice Chancellor: Final signature
+        8. Return to Examination, then SSC for handover to student
+
+  utter_intent_320:
+    - text: |
+        **MSc Degree Issuance Procedure (10 working days):**
+        1. Request received at SSC (Application form + Fee Receipt)
+        2. Examination Section: Degree list prepared and checked with Superintendent's signature
+        3. Treasurer: Account clearance verification
+        4. DPGS: Record and clearance verification
+        5. Assistant Controller of Examinations: Signature and forward to Controller
+        6. Controller of Examinations: Signature and forward to Registrar
+        7. Registrar: Signature and forward to VC
+        8. Vice Chancellor: Final signature
+        9. Return to Examination, then SSC for handover to student
+
+  utter_intent_321:
+    - text: |
+        **PhD Degree Issuance Procedure (10 working days):**
+        1. Request received at SSC (Application form + Fee Receipt)
+        2. Examination Section: Degree list prepared and checked with Superintendent's signature
+        3. Treasurer: Account clearance verification
+        4. DPGS: Record and clearance verification
+        5. Assistant Controller of Examinations: Signature and forward to Controller
+        6. Controller of Examinations: Signature and forward to Registrar
+        7. Registrar: Signature and forward to VC
+        8. Vice Chancellor: Final signature
+        9. Return to Examination, then SSC for handover to student
+
+  utter_intent_322:
+    - text: |
+        **BSc Interim Transcript Procedure (1 working day, ordinary 1000/-, urgent 1500/-):**
+        1. Request received at SSC (Application form + Fee Receipt via CMS)
+        2. Secrecy Section: Prepared and checked by designated staff
+        3. Controller of Examinations: Final signature
+        4. Return to SSC for handover to student
+
+  utter_intent_323:
+    - text: |
+        **MSc Interim Transcript Procedure (3 working days):**
+        1. Request received at SSC (Application form + Fee Receipt)
+        2. Secrecy Section: Result, name, grades checked with register, prepared and verified
+        3. Controller of Examinations: Final signature
+        4. Return to SSC for handover to student
+
+  utter_intent_324:
+    - text: |
+        **PhD Interim Transcript Procedure (3 working days):**
+        1. Request received at SSC (Application form + Fee Receipt)
+        2. Secrecy Section: Result, name, grades checked with register, prepared and verified
+        3. Controller of Examinations: Final signature
+        4. Return to SSC for handover to student
+
+  utter_intent_325:
+    - text: |
+        **BSc Final Transcript Procedure (2 working days, ordinary 1000/-, urgent 1500/-):**
+        1. Request received at SSC (Application form + Fee Receipt via CMS)
+        2. Secrecy Section: Result checked and verified with final result
+        3. CMS: Repeat code, result declaration, clearance
+        4. Secrecy Section: Prepared and checked
+        5. Controller of Examinations: Final signature
+        6. Return to SSC for handover to student
+
+  utter_intent_326:
+    - text: |
+        **MSc Final Transcript Procedure (2 working days):**
+        1. Request received at SSC (Application form + Fee Receipt + relevant documents)
+        2. Secrecy Section: Results, name, grades, research title checked with register
+        3. Controller of Examinations: Final signature
+        4. Return to SSC for handover to student
+
+  utter_intent_327:
+    - text: |
+        **PhD Final Transcript Procedure (2 working days):**
+        1. Request received at SSC (Application form + Fee Receipt + relevant documents)
+        2. Secrecy Section: Results, name, grades, research title checked with register
+        3. Controller of Examinations: Final signature
+        4. Return to SSC for handover to student
+
+  utter_intent_328:
+    - text: |
+        **BSc Verification of Documents Procedure (4 working days):**
+        1. Request received at SSC
+        2. Superintendent Exam: Check degrees and transcripts with record
+        3. Assistant Controller of Examinations: Signature and forward to CMS
+        4. CMS Manager: Dues clearance
+        5. Controller of Examinations: Signature and forward to Registrar
+        6. Registrar: Counter signature
+        7. Return to SSC for handover to student
+
+  utter_intent_329:
+    - text: |
+        **MSc/PhD Verification of Documents Procedure (8 working days):**
+        1. Request received at SSC
+        2. Superintendent Exam: Check degrees and transcripts with record
+        3. Assistant Controller of Examinations: Signature and forward to CMS
+        4. Treasurer/nominee: Dues clearance
+        5. DPGS: Dues statement and verification
+        6. Treasurer: Signature
+        7. Controller of Examinations: Signature and forward to Registrar
+        8. Registrar: Counter signature
+        9. Return to Examination and SSC for handover to student
+
+  utter_intent_330:
+    - text: |
+        **Duplicate/Revised Degree Procedure (15 working days, fee 5000/-):**
+        1. Request received at SSC
+        2. Superintendent Exam: Check degrees and documents with record
+        3. CMS: Dues clearance and verification
+        4. Law Officer: Legal opinion and documents verification
+        5. Controller of Examinations: Signature and forward to Registrar
+        6. Registrar: Signature and forward to VC
+        7. Vice Chancellor: Final approval
+        8. Return to Examination for normal degree process
+        9. Return to SSC for handover to student
+
+  utter_intent_331:
+    - text: |
+        **CMS Clearance Procedure for Undergraduate Students:**
+        1. CMS: Clearance
+        2. Account/Finance Section: Clearance
+        3. Departmental Library
+        4. Central Library
+        5. Provost Office
+        6. Director Sport Office
+        7. Director Club Office
+        8. Career Development Center
+        9. Scholarship Office
+        10. Department Career Liaison
+        11. Focal Person (Foreign Students)
+        12. Semester Coordinator
+        13. Head of Department
+
+  utter_intent_332:
+    - text: |
+        **CMS Clearance Procedure for Postgraduate Students:**
+        1. CMS: Clearance
+        2. Account/Finance Section: Clearance
+        3. Departmental Library
+        4. Central Library
+        5. Provost Office
+        6. Director Sport Office
+        7. Director Club Office
+        8. Focal Person (Foreign Students)
+        9. Postgraduate Advisor
+        10. Head of Department
+
+
+  utter_intent_333:
+    - text: "University of Engineering and Technology Peshawar, commonly called UET Peshawar, is a public engineering university in Peshawar. It is one of Pakistan’s well-known engineering institutions and focuses mainly on engineering, technology, computer science, and applied sciences."
+  utter_intent_334:
+    - text: "Directorate of Admissions handles the undergraduate student admissions."
+  utter_intent_335:
+    - text: "The contact number for the Directorate of Admissions is 091-9216784."
+  utter_intent_336:
+    - text: "The official website to apply for the entrance test and admissions is www.enggentrancetest.pk"
+  utter_intent_337:
+    - text: "The official email address for admission queries is admission@uetpeshawar.edu.pk"
+  utter_intent_338:
+    - text: "Directorate of Media and Publications is responsible for admission publicity and media."
+  utter_intent_339:
+    - text: "The application processing fee for undergraduate admissions is Rs. 2500/-."
+  utter_intent_340:
+    - text: "The application processing fee must be deposited in United Bank Ltd. (UBL)."
+  utter_intent_341:
+    - text: "The UET Admission account number for depositing the fee is 1486-205505522."
+  utter_intent_342:
+    - text: "No the application processing fee is non-refundable."
+  utter_intent_343:
+    - text: "There are 10 digits in the SEQ number received on the bank receipt."
+  utter_intent_344:
+    - text: "There are 4 digits in the bank branch code on the deposit receipt."
+  utter_intent_345:
+    - text: "Minimum 60% marks are requirement in Intermediate (FSc) for Engineering."
+  utter_intent_346:
+    - text: "Minimum 50% marks are requirement for the Interior Design program."
+  utter_intent_347:
+    - text: "Yes the ETEA Entrance Test required for Engineering programs."
+  utter_intent_348:
+    - text: "Yes the ETEA Entrance Test required for the Bachelor of Architecture program."
+  utter_intent_349:
+    - text: "No the ETEA Entrance Test are not required for the Bachelor of Interior Design program."
+  utter_intent_350:
+    - text: "Educational Testing & Evaluation Agency (ETEA) conducts the official entrance test for UET Peshawar."
+  utter_intent_351:
+    - text: "Khyber Pakhtunkhwa (KP) or erstwhile FATA domiciless is required for regular open merit admission."
+  utter_intent_352:
+    - text: "Subjects that are required in FSc for most engineering admissions, are Physics Mathematics and Chemistry (or Computer Science)."
+  utter_intent_353:
+    - text: "Yes they can apply but they must study 'Mathematics for Architects' in their first year."
+  utter_intent_354:
+    - text: "Yes they are eligible, but provided they have at least 60% unadjusted marks."
+  utter_intent_355:
+    - text: "The final merit for admission are based on First Year (Intermediate) marks, Matric marks and Entrance Test marks."
+  utter_intent_356:
+    - text: "Yes, the students whose final intermediate results are awaited can apply for admission"
+  utter_intent_357:
+    - text: "A Hope Certificate and an Undertaking must be submitted."
+  utter_intent_358:
+    - text: "These are Open Merit programs with standard subsidized government fee structures."
+  utter_intent_359:
+    - text: "These are Self-Finance programs where students pay higher tuition fees."
+  utter_intent_360:
+    - text: "No preferences can be selected in the same online application form."
+  utter_intent_361:
+    - text: "Applications must be filled and submitted online."
+  utter_intent_362:
+    - text: "The official website of UET Peshawar is www.uetpeshawar.edu.pk"
+  utter_intent_363:
+    - text: "Yes full and partial scholarships are available for meritorious and needy students."
+  utter_intent_364:
+    - text: "Frontier Education Foundation (FEF) Scholarship."
+  utter_intent_365:
+    - text: "Yes there is a free internet facility with Wi-Fi services."
+  utter_intent_366:
+    - text: "Yes hostel admission is available subject to allotment and availability."
+  utter_intent_367:
+    - text: "Yes free on-campus medical assistance is provided."
+
+  utter_intent_368:
+    - text: "It is the executive body exercising general supervision over the university's affairs."
+  utter_intent_369:
+    - text: "It regulates the standards of instruction research and examinations."
+  utter_intent_370:
+    - text: "Artificial Intelligence Cyber Security Data Science and Interior Design."
+  utter_intent_371:
+    - text: "Yes, Software Engineering is offered at UET Peshawar"
+  utter_intent_372:
+    - text: "Faculty of Electrical & Computer Engineering offer the Computer Systems Engineering program"
+  utter_intent_373:
+    - text: "Yes, Agricultural Engineering is offered as a subsidized program"
+  utter_intent_374:
+    - text: "Yes, Civil Engineering is offer at UET Peshawar"
+  utter_intent_375:
+    - text: "Yes Chemical Engineering can be studied on a non-subsidized (self-finance) basis."
+  utter_intent_376:
+    - text: "Civil Engineering and Electrical Engineering (Communication)."
+  utter_intent_377:
+    - text: "Peshawar and Abbottabad Campuses offer the Bachelor of Architecture program."
+  utter_intent_378:
+    - text: "Peshawar and Abbottabad Campuses offer the Interior Design program."
+  utter_intent_379:
+    - text: "Yes the university offer Energy Engineering."
+  utter_intent_380:
+    - text: "The Governor of Khyber Pakhtunkhwa serves as the Chancellor of UET Peshawar."
+  utter_intent_381:
+    - text: "The Vice Chancellor is the chief administrative and academic officer of the university."
+  utter_intent_382:
+    - text: "Yes, there are admission quotas for students from erstwhile FATA."
+  utter_intent_383:
+    - text: "They must repeat the course fulfill requirements and earn a fresh grade."
+  utter_intent_384:
+    - text: "English is the official medium of instruction at UET Peshawar."
+  utter_intent_385:
+    - text: "The duration of a single academic semester are 18 weeks (including classes and examinations)."
+  utter_intent_386:
+    - text: "Fall semester are typically commence September or October."
+  utter_intent_387:
+    - text: "Spring semester are typically commence in February or March."
+  utter_intent_388:
+    - text: "Two regular semesters are their in one academic year."
+  utter_intent_389:
+    - text: "Yes industrial visits are arranged on a regular basis."
+  utter_intent_390:
+    - text: "Yes students must complete 800 hours of internship."
+  utter_intent_391:
+    - text: "Yes including Microsoft Azure."
+  utter_intent_392:
+    - text: "Yes a Digital Library with VPN access is available."
+  utter_intent_393:
+    - text: "Yes it is strictly monitored to ensure a safe campus environment."
+  utter_intent_394:
+    - text: "Yes hostel gate timings are strictly enforced under the discipline rules."
+  utter_intent_395:
+    - text: "The Hostel Discipline Committee deals with violations of hostel rules."
+  utter_intent_396:
+    - text: "Yes provided they have at least 60% unadjusted marks."
+  utter_intent_397:
+    - text: "The Educational Testing & Evaluation Agency (ETEA) issues the official Entrance Test results."
+  utter_intent_398:
+    - text: "Mathematics for Architects must taken by Pre-medical students if admitted to architecture."
+  utter_intent_399:
+    - text: "Yes UET Peshawar offer a degree in Computer Science."
+  utter_intent_400:
+    - text: "DPGS stands for Directorate of Postgraduate Studies."
+  utter_intent_401:
+    - text: "DUGS stands for Directorate of Undergraduate Studies."
+  utter_intent_402:
+    - text: "Yes talented students are given cash awards by the university."
+  utter_intent_403:
+    - text: "Yes there re award for the best final year student projects."
+  utter_intent_404:
+    - text: "Yes they are awarded to top position holders during graduation."
+  utter_intent_405:
+    - text: "Yes the main campus building centrally air-conditioned."
+  utter_intent_406:
+    - text: "It has auto-start standby diesel generators solar energy and UPS systems."
+  utter_intent_407:
+    - text: "CMS stands for Campus Management System."
+  utter_intent_408:
+    - text: "Students can access their academic records and course registration by logging into the CMS portal on the UET website."
+  utter_intent_409:
+    - text: "Yes there are various clubs and societies for the students."
+  utter_intent_410:
+    - text: "ORIC stands for Office of Research Innovation and Commercialization."
+  utter_intent_411:
+    - text: "CDC stands for Career Development Center."
+  utter_intent_412:
+    - text: "No the prospectus emphasizes a politics-free environment for the students."
+  utter_intent_413:
+    - text: "Yes there are specific guidelines for the addition and withdrawal of courses."
+  utter_intent_414:
+    - text: "Yes class work and attendance are strictly monitored for grading."
+  utter_intent_415:
+    - text: "Batch Advisors and Departmental Faculty provides academic counseling to students."
+  utter_intent_416:
+    - text: "Yes it is ranked among the top universities in the THE World University Rankings."
+  utter_intent_417:
+    - text: "The student-to-faculty ratio at UET Peshawar is 5:1"
+  utter_intent_418:
+    - text: "More than 25% of UET Peshawar students receive financial scholarships."
+  utter_intent_419:
+    - text: "Yes they must satisfy the department about their English proficiency before registration."
+  utter_intent_420:
+    - text: "They are expected to obtain at least 60% marks in their final intermediate result."
+  utter_intent_421:
+    - text: "Typically 70% weightage is given to FSc (or equivalent) marks and 30% to the Entrance Test (ECAT/ETEA) score."
+  utter_intent_422:
+    - text: "While 60% is the minimum eligibility a competitive aggregate is usually 75% or higher depending on the engineering discipline."
+  utter_intent_423:
+    - text: "Yes you can select multiple preferences in the same online application form."
+  utter_intent_424:
+    - text: "No engineering admissions require the official ETEA Entrance Test or an officially recognized equivalent."
+  utter_intent_425:
+    - text: "Yes a student can freeze a semester under specific academic rules usually due to valid personal or medical reasons."
+  utter_intent_426:
+    - text: "Yes a student is allowed to unfreeze a semester within two weeks of the commencement of classes."
+  utter_intent_427:
+    - text: "The fee deposited for freezing will be adjusted in your tuition fee once you unfreeze or return."
+  utter_intent_428:
+    - text: "Yes credit transfer is possible if the courses match UET's curriculum and the student has a minimum GPA of 3.0 out of 4.0 in those subjects."
+  utter_intent_429:
+    - text: "A minimum of a B grade or equivalent (3.0 GPA) is usually required for credit transfer from HEC recognized universities."
+  utter_intent_430:
+    - text: "Yes students receiving a grade of C or lower (or C+ for some programs) have one chance to improve the grade by repeating the course."
+  utter_intent_431:
+    - text: "Yes tuition fees are charged again for repeating the course."
+  utter_intent_432:
+    - text: "The highest grade achieved will be considered for your CGPA though all attempts will show on the transcript with a repeat symbol (RPT*)."
+  utter_intent_433:
+    - text: "You must re-register and pass the course as you cannot graduate without passing all core subjects."
+  utter_intent_434:
+    - text: "Yes a student may withdraw from a course within six weeks of the commencement of classes."
+  utter_intent_435:
+    - text: "No fees are not refunded for a withdrawn course and a 'W' grade will appear on your transcript."
+  utter_intent_436:
+    - text: "It is a centralized hub established to resolve student queries regarding academics accounts exams and scholarships proactively."
+  utter_intent_437:
+    - text: "The Director of Undergraduate Studies (DUGS) serves as the Incharge of the SSC."
+  utter_intent_438:
+    - text: "Yes all enrolled students are provided with official university email accounts for academic use."
+  utter_intent_439:
+    - text: "Yes UET Peshawar provides VPN access for students to use the HEC Digital Library remotely."
+  utter_intent_440:
+    - text: "Yes students get access to licensed HEC-Microsoft Services like Microsoft Azure."
+  utter_intent_441:
+    - text: "The campus has facilities for cricket football lawn tennis badminton volleyball and basketball."
+  utter_intent_442:
+    - text: "Yes secure and dedicated female hostels are available on the campus."
+  utter_intent_443:
+    - text: "Yes dining facilities (mess) are available to hostel residents at reasonable rates."
+  utter_intent_444:
+    - text: "Cubicles are single or bi-seater rooms while dormitories accommodate a larger group of students."
+  utter_intent_445:
+    - text: "Yes hostel residents can avail of campus laundry services at reasonable charges."
+  utter_intent_446:
+    - text: "Yes clean and well-stocked cafeterias are available and monitored for hygiene by a faculty committee."
+  utter_intent_447:
+    - text: "Yes bus transport facilities are available for morning program day scholars for a monthly fee."
+  utter_intent_448:
+    - text: "No university transport is generally not provided for evening programs."
+  utter_intent_449:
+    - text: "It is a university body that ensures academic standards and quality of education are maintained across all departments."
+  utter_intent_450:
+    - text: "An on-campus first aid facility is available and the nearby District Headquarters Hospital handles serious emergencies."
+  utter_intent_451:
+    - text: "Students are required to wear decent and modest clothing in accordance with university guidelines."
+  utter_intent_452:
+    - text: "Yes UET Peshawar has a strict policy for protection against harassment ensuring a safe workplace and study environment."
+  utter_intent_453:
+    - text: "National Institute of Urban Infrastructure Planning."
+  utter_intent_454:
+    - text: "It is located in Phase V of the Hayatabad township in Peshawar."
+  utter_intent_455:
+    - text: "Yes energy-related degrees are offered at both undergraduate and postgraduate levels."
+  utter_intent_456:
+    - text: "Yes the university offers BSc MSc and PhD programs in Industrial Engineering."
+  utter_intent_457:
+    - text: "Peshawar and Abbottabad campuses."
+  utter_intent_458:
+    - text: "Yes specific subsidized and non-subsidized quotas exist for students from other provinces."
+  utter_intent_459:
+    - text: "It is the U.S.-Pakistan Center for Advanced Studies in Energy located at UET Peshawar."
+  utter_intent_460:
+    - text: "It includes Robotics PLCs Microcontrollers and Manufacturing Automation labs among others."
+  utter_intent_461:
+    - text: "Yes an annual survey camp is a mandatory practical component for civil engineering students."
+  utter_intent_462:
+    - text: "The university's Discipline Committee handles the case which may result in fines suspension or expulsion."
+  utter_intent_463:
+    - text: "They provide academic counseling help with course selection and guide students through university regulations."
+  utter_intent_464:
+    - text: "No student political unions are strictly prohibited on campus."
+  utter_intent_465:
+    - text: "Yes students can track their attendance via the Campus Management System (CMS) portal."
+  utter_intent_466:
+    - text: "Yes hostel residents have access to the university's Wi-Fi network."
+  utter_intent_467:
+    - text: "Students can submit a standard Hostel Complaint Form to the hostel administration."
+  utter_intent_468:
+    - text: "No there are specific gate timings and a leave application must be submitted to go out or go home."
+  utter_intent_469:
+    - text: "Yes but under strict regulations and during specified visiting hours only."
+  utter_intent_470:
+    - text: "The Controller of Examinations office issues all official transcripts and degrees."
+  utter_intent_471:
+    - text: "Yes an application form for a degree in absentia can be submitted if you cannot attend the convocation."
+  utter_intent_472:
+    - text: "It is a document issued by your college stating the expected marks for students whose final results are awaited."
+  utter_intent_473:
+    - text: "Yes the university has an active Alumni Association for networking and career opportunities."
+  utter_intent_474:
+    - text: "Undergraduates do it via CMS while MS/MSc students usually submit it to the postgraduate advisor of their department."
+  utter_intent_475:
+    - text: "To be eligible for MS/MSc graduation a student must have a CGPA of at least 2.67."
+  utter_intent_476:
+    - text: "It depends on the stream. Some MS programs offer a course-work only track while others require a research thesis."
+  utter_intent_477:
+    - text: "Board of Advanced Studies and Research which approves postgraduate research proposals and academic matters."
+  utter_intent_478:
+    - text: "Project Research Evaluation Committee which evaluates a postgraduate student's research proposal before BOASAR approval."
+  utter_intent_479:
+    - text: "Yes but it must be recommended by the PREC and approved by BOASAR."
+  utter_intent_480:
+    - text: "Yes foreign students can apply through the HEC or relevant ministries under specified quotas."
+  utter_intent_481:
+    - text: "Foreign students must satisfy the concerned department about their English proficiency before registration."
+  utter_intent_482:
+    - text: "An undergraduate student generally takes between 15 to 18 credit hours per semester but can re-register up to 21."
+  utter_intent_483:
+    - text: "Yes the Summer Semester is usually offered to clear failed courses or improve grades."
+  utter_intent_484:
+    - text: "Regular students can typically register for a maximum of 9 credit hours in the summer."
+  utter_intent_485:
+    - text: "You can fill out the CMS/WIFI Reset Form available through the Student Services Center or IT center."
+  utter_intent_486:
+    - text: "Yes the Career Development Center (CDC) helps students with internships job placements and career advice."
+  utter_intent_487:
+    - text: "Yes there are various clubs for debating drama media and technical societies like IEEE and ASME."
+  utter_intent_488:
+    - text: "UET Peshawar strives to provide accessible facilities including ramps and specific quotas for differently-abled candidates."
+  utter_intent_489:
+    - text: "If your final result drops below 60% your admission is liable to be canceled as you no longer meet the minimum eligibility."
+  utter_intent_490:
+    - text: "Yes ETEA or the admission portal often provides mock test links or demo videos to help students prepare."
+  utter_intent_491:
+    - text: "The entrance test result is generally valid only for the admission cycle of that specific academic year."
+  utter_intent_492:
+    - text: "Yes DAE (Diploma of Associate Engineer) holders have specific reserved seats and can also compete on regular quotas if eligible."
+  utter_intent_493:
+    - text: "There is usually no upper age limit for applying to undergraduate programs at UET Peshawar."
+  utter_intent_494:
+    - text: "You can enter the 10-digit SEQ number from your UBL bank receipt on the online admission portal to verify."
+  utter_intent_495:
+    - text: "Currently most regular BSc engineering programs are morning programs but certain tech or postgraduate courses may run in the evening."
+  utter_intent_496:
+    - text: "Generally electronic gadgets including programmable calculators and mobile phones are strictly prohibited in the test center."
+  utter_intent_497:
+    - text: "You must fill out the 'Change/Correction in Name' form and submit it to the Academics Section with proof (like your Matric certificate)."
+  utter_intent_498:
+    - text: "You must get a clearance form signed by your department the library hostels and the accounts office to receive your final degree."
+  utter_intent_499:
+    - text: "It is a plagiarism detection software used to check the originality of students' research assignments and theses."
+  utter_intent_500:
+    - text: "Yes UET Peshawar publishes an annual report detailing its academic achievements research and financial status."
+  utter_intent_501:
+    - text: "Yes the university grants Cash Awards to talented students who secure top positions in their respective batches."
+  utter_intent_502:
+    - text: "Students can formally lodge complaints regarding academics or administration which are reviewed by a dedicated redressal committee."
+  utter_intent_503:
+    - text: "No while it is famous for Architecture it also offers Electronics and other engineering disciplines."
+  utter_intent_504:
+    - text: "The Nowshera Campus generally focuses on Civil Electrical and Mechanical engineering technologies."
+  utter_intent_505:
+    - text: "While most scholarships target undergraduates some research grants and endowments are available for PG students."
+  utter_intent_506:
+    - text: "No university and hostel security fees are generally one-time non-recurring fees paid at admission and are refundable upon graduation."
+  utter_intent_507:
+    - text: "It is a temporary document issued to a student confirming they have completed their degree requirements while they wait for the official degree to be printed."
+  utter_intent_508:
+    - text: "Yes there are mosques available on campus for students and staff to offer prayers."
+  utter_intent_509:
+    - text: "Without a valid medical reason or prior approval missing a final exam results in an 'F' grade for that course."
+  utter_intent_510:
+    - text: "Yes selected candidates are usually required to submit a medical fitness certificate at the time of joining."
+  utter_intent_511:
+    - text: "Yes inter-university migration is possible under specific HEC and university rules usually after the first year and subject to seat availability."
+  utter_intent_512:
+    - text: "You must obtain a No Objection Certificate (NOC) from your parent university to apply for migration to UET."
+  utter_intent_513:
+    - text: "Yes there are photostat shops located within the campus for student convenience."
+  utter_intent_514:
+    - text: "Guest accommodation in student hostels is highly restricted and usually requires special permission from the Provost."
+  utter_intent_515:
+    - text: "A specific daily or weekly fine is applied if a student fails to pay their semester fee within the notified deadline."
+  utter_intent_516:
+    - text: "An Ex-Final student is someone who has completed the standard duration of their degree (e.g. 4 years) but still has failed courses left to clear."
+  utter_intent_517:
+    - text: "Typically a student has a maximum of 7 years (14 semesters) to clear all subjects and complete a 4-year bachelor's degree."
+  utter_intent_518:
+    - text: "The Unfair Means (UFM) Committee handles these cases which can result in the cancellation of the paper or expulsion."
+  utter_intent_519:
+    - text: "Yes the university encourages entrepreneurship and often links student startups through ORIC."
+  utter_intent_520:
+    - text: "Labs are usually graded through a combination of continuous assessment (reports/performance) and a final viva/practical exam."
+
+  utter_intent_521:
+    - text: "Exit the room and turn left. Walk straight for about 60 steps. Turn left again and go up to the first floor. Once upstairs, turn left and walk approximately 25 steps. You will find the Cisco lab there."
+
+  utter_intent_522:
+    - text: "Exit the room and turn left. Walk straight for about 70 steps. Turn Right and walk 130 step forwards, the office will be on the left side."
+
+  utter_intent_523:
+    - text: "Exit the room and turn left. Walk straight for about 60 steps. Turn left again and go up to the first floor. Once upstairs, turn left and walk approximately 15 steps. You will find the Dcse Main Office there."
+
+  utter_intent_524:
+    - text: "Exit the room and turn left. Walk straight for about 60 steps. Turn Right to enter into Electrical Department and walk 45 steps forwards, You will find the video conference hall." 
+
+  utter_intent_525:
+    - text: "Exit the room and turn left. Walk straight for about 140 steps. You will find the shop on the right side." 
+
+  utter_intent_526:
+    - text: "Exit the room and walk 110 steps forward and then turn left, you will find the office there."
+ 
+  utter_intent_527:
+    - text: "Exit the room and turn left. Walk straight for about 140 steps. The department will be on the left side."
+
+  utter_intent_528:
+    - text: "Exit the room and turn left. Walk straight for about 60 steps. Turn right enter into Electrical Department and go up to the top floor. Once upstairs, you will the SID lab there." 
+
+  utter_intent_529:
+    - text: "Exit the room and turn left. Walk straight for about 60 steps. Turn right and go up to the first floor. Once upstairs, the hall will be on the left side." 
+
+  utter_intent_530:
+    - text: "The engineering entrance test is a standardized exam for admission to engineering programs in KPK universities. Your score determines eligibility for admission."
+
+  utter_intent_531:
+    - text: "You can register online through the official entrance test portal by filling out the application form, uploading required documents, and paying the registration fee."
+
+  utter_intent_532:
+    - text: "Required documents include the Intermediate certificate, CNIC or B-Form, passport-sized photograph, and fee payment receipt."
+
+  utter_intent_533:
+    - text: "The last date to apply is announced annually on the official portal, typically a few weeks before the examination."
+
+  utter_intent_534:
+    - text: "Yes, registration for the engineering entrance test is completely online through the official website."
+
+  utter_intent_535:
+    - text: "The entrance test is usually conducted in May or June, and the exact dates are published annually on the official portal."
+
+  utter_intent_536:
+    - text: "The engineering entrance test is generally held once a year."
+
+  utter_intent_537:
+    - text: "You can find the official exam schedule on the entrance test portal under the 'Schedule' or 'Important Dates' section."
+
+  utter_intent_538:
+    - text: "The duration of the engineering entrance test is typically between 2 to 3 hours."
+
+  utter_intent_539:
+    - text: "Results are announced online, usually within 2 to 3 weeks after the examination."
+
+  utter_intent_540:
+    - text: "Students who have completed or are appearing in Intermediate (F.Sc.) Pre-Engineering or equivalent are eligible to apply."
+
+  utter_intent_541:
+    - text: "Yes, DAE and B-Tech students must appear for the entrance test to gain admission to engineering programs."
+
+  utter_intent_542:
+    - text: "Yes, students from other provinces can take the KPK entrance test, though preference may be given to KPK residents."
+
+  utter_intent_543:
+    - text: "Generally, there is no strict age limit; however, candidates should verify updates on the official portal."
+
+  utter_intent_544:
+    - text: "Typically, only students completing Intermediate Part-II are eligible, although some universities allow conditional registration."
+
+  utter_intent_545:
+    - text: "The entrance test includes Mathematics, Physics, Chemistry, and English."
+
+  utter_intent_546:
+    - text: "The test usually consists of 100–200 multiple-choice questions, with each correct answer carrying one mark."
+
+  utter_intent_547:
+    - text: "Yes, negative marking is typically applied, with 0.25 marks deducted for each incorrect answer."
+
+  utter_intent_548:
+    - text: "Past papers and sample questions are available on official portals and educational websites such as EnggEntranceTest.pk and UET preparation pages."
+
+  utter_intent_549:
+    - text: "Focus on Intermediate Pre-Engineering subjects, solve past papers, practice mock tests, and manage time effectively for better preparation."
+
+  utter_intent_550:
+    - text: "The Secured IoT Devices Lab at UET Peshawar is a multidisciplinary research facility focused on secure IoT systems and advanced technologies, and mainly associated with the Department of Computer Systems Engineering (DCSE)."
+
+  utter_intent_551:
+    - text: "SID Lab focuses on secure IoT systems, Artificial Intelligence, Embedded Systems, and Cybersecurity."
+
+  utter_intent_552:
+    - text: "The mission of SID Lab is to deploy advanced scientific concepts and IoT-based solutions that promote technological innovation, security, and sustainable development."
+
+  utter_intent_553:
+    - text: "SID Lab contributes by developing secure IoT solutions, supporting smart agriculture, climate change mitigation, and technological innovation."
+
+  utter_intent_554:
+    - text: "Exit the room and turn left. Walk straight for about 60 steps. Turn right enter into Electrical Department and go up to the top floor. Once upstairs, you will the SID lab there." 
+
+  utter_intent_555:
+    - text: "Research areas include secure IoT systems, Artificial Intelligence, embedded systems, cybersecurity, and sustainable technologies."
+
+  utter_intent_556:
+    - text: "Yes, Artificial Intelligence is a core research area at SID Lab and is integrated with IoT to solve real-world problems."
+
+  utter_intent_557:
+    - text: "Yes, SID Lab actively conducts research in embedded systems as part of its multidisciplinary initiatives."
+
+  utter_intent_558:
+    - text: "SID Lab enhances cybersecurity by developing secure communication and data protection techniques for IoT devices."
+
+  utter_intent_559:
+    - text: "SID Lab addresses real-world challenges such as smart agriculture, climate change mitigation, secure monitoring systems, and IoT-based traceability."
+
+  utter_intent_560:
+    - text: "The Director of the SID Lab is Dr. Safdar Nawaz Khan Marwat."
+
+  utter_intent_561:
+    - text: "Key researchers include Dr. Safdar Nawaz Khan Marwat, Dr. Arbab Waseem Abbas, Engr. Waseem Ullah Khan, Engr. Ilham Hamid, and other research associates."
+
+  utter_intent_562:
+    - text: "You can contact the SID Lab via email at sid@uetpeshawar.edu.pk."
+
+  utter_intent_563:
+    - text: "The Senior Scientist at SID Lab is Dr. Arbab Waseem Abbas."
+
+  utter_intent_564:
+    - text: "Undergraduate researchers assist with projects, experiments, and innovation work under expert supervision."
+
+  utter_intent_565:
+    - text: "Industrial partners include Hash Computing Pvt Ltd, Anazeem Technology, Welltime Ltd, and TSK Engineering."
+
+  utter_intent_566:
+    - text: "Academic collaborators include GIKI, Prince Mohammad Bin Fahd University, Hamad Bin Khalifa University, Gdańsk University of Technology, and the University of Agriculture Peshawar."
+
+  utter_intent_567:
+    - text: "Yes, students from partner universities can collaborate with SID Lab on joint research initiatives."
+
+  utter_intent_568:
+    - text: "SID Lab promotes sustainability through IoT and AI innovations in areas such as climate change mitigation and smart agriculture."
+
+  utter_intent_569:
+    - text: "Yes, SID Lab participates in international research programs through collaborations with global universities and institutes."
+
+  utter_intent_570:
+    - text: "University of Engineering and Technology Peshawar, commonly called UET Peshawar, is a public engineering university in Peshawar. It is one of Pakistan’s well-known engineering institutions and focuses mainly on engineering, technology, computer science, and applied sciences."
+
+  utter_intent_571:
+    - text: "The Directorate of Admissions handles undergraduate student admissions."
+
+  utter_intent_572:
+    - text: "The contact number for the Directorate of Admissions is 091-9216784."
+
+  utter_intent_573:
+    - text: "The official website to apply for the entrance test and admissions is www.enggentrancetest.pk."
+
+  utter_intent_574:
+    - text: "The official email address for admission queries is admission@uetpeshawar.edu.pk."
+
+  utter_intent_575:
+    - text: "The Directorate of Media and Publications is responsible for admission publicity and media."
+
+  utter_intent_576:
+    - text: "The application processing fee for undergraduate admissions is Rs. 2500/-."
+
+  utter_intent_577:
+    - text: "The application processing fee must be deposited in United Bank Ltd. (UBL)."
+
+  utter_intent_578:
+    - text: "The UET Admission account number is 1486-205505522."
+
+  utter_intent_579:
+    - text: "No, the application processing fee is non-refundable."
+
+  utter_intent_580:
+    - text: "There are 10 digits in the SEQ number received on the bank receipt."
+
+  utter_intent_581:
+    - text: "There are 4 digits in the bank branch code on the deposit receipt."
+
+  utter_intent_582:
+    - text: "A minimum of 60% marks in Intermediate (FSc) is required for Engineering."
+
+  utter_intent_583:
+    - text: "A minimum of 50% marks is required for the Interior Design program."
+
+  utter_intent_584:
+    - text: "Yes, the ETEA Entrance Test is required for Engineering programs."
+
+  utter_intent_585:
+    - text: "Yes, the ETEA Entrance Test is required for the Bachelor of Architecture program."
+
+  utter_intent_586:
+    - text: "No, the ETEA Entrance Test is not required for the Bachelor of Interior Design program."
+
+  utter_intent_587:
+    - text: "The Educational Testing and Evaluation Agency (ETEA) conducts the official entrance test for UET Peshawar."
+
+  utter_intent_588:
+    - text: "Khyber Pakhtunkhwa (KP) or erstwhile FATA domicile is required for regular open merit admission."
+
+  utter_intent_589:
+    - text: "Physics, Mathematics, and Chemistry (or Computer Science) are required in FSc for most engineering admissions."
+
+  utter_intent_590:
+    - text: "Yes, pre-medical students can apply for Architecture but must study 'Mathematics for Architects' in their first year."
+
+  utter_intent_591:
+    - text: "Yes, DAE holders are eligible provided they have at least 60% unadjusted marks."
+
+  utter_intent_592:
+    - text: "The final merit is determined based on First Year Intermediate marks, Matric marks, and Entrance Test marks."
+
+  utter_intent_593:
+    - text: "Yes, students whose final intermediate results are awaited can apply for admission."
+
+  utter_intent_594:
+    - text: "Result-awaiting students must submit a Hope Certificate and an Undertaking."
+
+  utter_intent_595:
+    - text: "The duration of the Bachelor of Architecture program is 5 years."
+
+  utter_intent_596:
+    - text: "The duration of the Bachelor of Interior Design program is 4 years."
+
+  utter_intent_597:
+    - text: "The standard duration of a B.Sc. Engineering program is 4 years."
+
+  utter_intent_598:
+    - text: "Subsidized programs are open merit programs with standard government-subsidized fee structures."
+
+  utter_intent_599:
+    - text: "Non-subsidized programs are self-finance programs where students pay higher tuition fees."
+
+  utter_intent_600:
+    - text: "No, separate forms are not required. Preferences can be selected in the same online application form."
+
+  utter_intent_601:
+    - text: "Applications must be filled and submitted online."
+
+  utter_intent_602:
+    - text: "The official website of UET Peshawar is www.uetpeshawar.edu.pk."
+
+  utter_intent_603:
+    - text: "The Peshawar campus has facilities for cricket, football, lawn tennis, badminton, volleyball, and basketball."
+
+  utter_intent_604:
+    - text: "Yes, secure and dedicated female hostels are available on the campus."
+
+  utter_intent_605:
+    - text: "Yes, dining facilities (mess) are available to hostel residents at reasonable rates."
+
+  utter_intent_606:
+    - text: "Cubicles are single or bi-seater rooms, while dormitories accommodate a larger group of students."
+
+  utter_intent_607:
+    - text: "Yes, hostel residents can avail of campus laundry services at reasonable charges."
+
+  utter_intent_608:
+    - text: "Yes, clean and well-stocked cafeterias are available and monitored for hygiene by a faculty committee."
+
+  utter_intent_609:
+    - text: "Yes, bus transport facilities are available for morning program day scholars for a monthly fee."
+
+  utter_intent_610:
+    - text: "No, university transport is generally not provided for evening programs."
+
+  utter_intent_611:
+    - text: "The Quality Enhancement Cell (QEC) ensures academic standards and quality of education across all departments."
+
+  utter_intent_612:
+    - text: "An on-campus first aid facility is available, and serious emergencies are handled by the nearby District Headquarters Hospital."
+
+  utter_intent_613:
+    - text: "Students are required to wear decent and modest clothing in accordance with university guidelines."
+
+  utter_intent_614:
+    - text: "Yes, UET Peshawar has a strict policy for protection against harassment, ensuring a safe environment."
+
+  utter_intent_615:
+    - text: "NIUIP stands for the National Institute of Urban Infrastructure Planning."
+
+  utter_intent_616:
+    - text: "The Department of Mechatronics Engineering is located in Phase V of Hayatabad Township, Peshawar."
+
+  utter_intent_617:
+    - text: "Yes, energy-related degrees, including Renewable Energy Engineering, are offered at undergraduate and postgraduate levels."
+
+  utter_intent_618:
+    - text: "Yes, UET offers BSc, MSc, and PhD programs in Industrial Engineering."
+
+  utter_intent_619:
+    - text: "The Bachelor of Architecture program is offered at the Peshawar and Abbottabad campuses."
+
+  utter_intent_620:
+    - text: "Yes, specific subsidized and non-subsidized quotas exist for students from Punjab, Sindh, and Balochistan."
+
+  utter_intent_621:
+    - text: "USPCASE is the U.S.-Pakistan Center for Advanced Studies in Energy located at UET Peshawar."
+
+  utter_intent_622:
+    - text: "The Mechatronics department includes Robotics, PLCs, Microcontrollers, and Manufacturing Automation laboratories."
+
+  utter_intent_623:
+    - text: "Yes, an annual survey camp is a mandatory practical component for Civil Engineering students."
+
+  utter_intent_624:
+    - text: "Cases of disciplinary breaches are handled by the Discipline Committee and may result in fines, suspension, or expulsion."
+
+  utter_intent_625:
+    - text: "Batch Advisors provide academic counseling, assist with course selection, and guide students through university regulations."
+
+  utter_intent_626:
+    - text: "No, student political unions are strictly prohibited on campus."
+
+  utter_intent_627:
+    - text: "Yes, students can track their attendance through the Campus Management System (CMS) portal."
+
+  utter_intent_628:
+    - text: "Yes, hostel residents have access to the university's Wi-Fi network."
+
+  utter_intent_629:
+    - text: "Students can submit a standard Hostel Complaint Form to the hostel administration."
+
+  utter_intent_630:
+    - text: "The Controller of Examinations office issues all official transcripts and degrees."
+
+  utter_intent_631:
+    - text: "I'm fine, How can I help you today"
+
+actions:
+  - action_handle_fallback  
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

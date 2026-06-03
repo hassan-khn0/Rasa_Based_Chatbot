@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Chatbot - Voice Interface</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --brand:   #8b695a;
+    --brand2:  #6b4c3b;
+    --accent:  #e8a87c;
+    --bg-panel: rgba(245,240,235,0.97);
+    --bg-right: rgba(230,225,220,0.97);
+    --user-bubble: #8b695a;
+    --bot-bubble:  #ffffff;
+    --shadow: 0 8px 32px rgba(0,0,0,0.18);
+    --radius: 20px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Outfit', sans-serif;
+    overflow: hidden;
+    background: #2c1f18;
+}
+
+/* ── TABS ── */
+.tab-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 52px;
+    background: var(--brand2);
+    display: flex;
+    align-items: center;
+    z-index: 200;
+    padding: 0 24px;
+    gap: 8px;
+}
+
+.tab {
+    padding: 7px 22px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65);
+    background: transparent;
+    transition: .2s;
+}
+.tab.active, .tab:hover {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+}
+
+.tab-badge {
+    display: inline-block;
+    background: #e05c3a;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 1px 7px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* ── VIEWS ── */
+.view { display: none; width: 100%; height: calc(100vh - 52px); margin-top: 52px; }
+.view.active { display: flex; }
+#view-admin { position: relative; }
+#view-admin.active { display: block; height: 0; }
+
+/* ══════════════════════════════════════
+   CHAT VIEW
+══════════════════════════════════════ */
+.chat-container {
+    width: 100%;
+    height: 100%;
+    background: url('assets/images/3_page_background.jpg') center/cover no-repeat;
+    display: flex;
+}
+
+.header {
+    position: absolute;
+    top: 67px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(139,105,90,0.95);
+    color: white;
+    padding: 10px 36px;
+    border-radius: 30px;
+    z-index: 100;
+    white-space: nowrap;
+}
+.header h1 { font-size: clamp(15px, 1.8vw, 26px); font-weight: 700; letter-spacing: .04em; }
+
+/* LEFT */
+.chatbot-panel {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 130px 20px 40px;
+    gap: 32px;
+}
+
+.bot-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 30px;
+    padding: 36px;
+    width: 90%;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow);
+}
+
+.bot-avatar-container {
+    width: 58%;
+    max-width: 260px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--accent);
+}
+.bot-avatar { width: 100%; height: 100%; object-fit: cover; }
+
+.bot-status h2 { font-size: clamp(16px, 1.8vw, 26px); font-weight: 700; color: var(--brand2); }
+
+/* fallback badge inside chat */
+.fallback-notice {
+    font-size: 12px;
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    padding: 4px 12px;
+    margin-top: 4px;
+    display: none;
+    text-align: center;
+}
+
+.control-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.control-btn {
+    padding: 14px 32px;
+    font-size: clamp(13px, 1.1vw, 18px);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    transition: .25s;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+.control-btn:active { transform: scale(0.95); }
+#btn-en { background: linear-gradient(135deg, #007bff, #0056b3); }
+#btn-ur { background: linear-gradient(135deg, #28a745, #1a6e2e); font-family: 'Noto Nastaliq Urdu', serif; }
+.recording { background: linear-gradient(135deg, #dc3545, #a71d2a) !important; }
+
+/* RIGHT */
+.conversation-panel {
+    width: 55%;
+    background: var(--bg-right);
+    padding: 130px 36px 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-right: 4px;
+}
+.conversation-list::-webkit-scrollbar { width: 5px; }
+.conversation-list::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 4px; }
+
+.message {
+    padding: 14px 18px;
+    border-radius: 18px;
+    max-width: 75%;
+    font-size: clamp(13px, 1.05vw, 17px);
+    line-height: 1.5;
+    animation: msgIn .25s ease;
+}
+@keyframes msgIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+.user { background: var(--user-bubble); color: white; align-self: flex-end; border-bottom-right-radius: 5px; }
+.bot  { background: var(--bot-bubble); color: #1a1a1a; align-self: flex-start; border-bottom-left-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.bot.fallback { border-left: 3px solid #ffc107; }
+
+.empty-state { text-align: center; margin-top: 60px; font-size: 16px; color: #999; }
+
+
+/* ══════════════════════════════════════
+   ADMIN VIEW
+══════════════════════════════════════ */
+.admin-view {
+    background: #f4f0ec;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 52px);
+    position: absolute;
+    top: 52px;
+    left: 0;
+    right: 0;
+}
+
+.admin-inner {
+    padding: 28px 36px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Stats row */
+.stats-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.stat-card {
+    flex: 1;
+    min-width: 140px;
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border-top: 4px solid var(--brand);
+}
+.stat-card.warn  { border-color: #ffc107; }
+.stat-card.good  { border-color: #28a745; }
+.stat-num { font-size: 36px; font-weight: 700; color: var(--brand2); }
+.stat-lbl { font-size: 13px; color: #777; margin-top: 2px; }
+
+/* Toolbar */
+.admin-toolbar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.filter-btn {
+    padding: 7px 18px;
+    border-radius: 20px;
+    border: 2px solid var(--brand);
+    background: transparent;
+    color: var(--brand2);
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+.filter-btn:hover, .filter-btn.active { background: var(--brand); color: white; }
+.export-btn {
+    margin-left: auto;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    background: var(--brand2);
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.export-btn:hover { background: #5a3828; }
+
+/* Table */
+.table-wrap {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    overflow-x: auto;   /* horizontal scroll on narrow screens */
+    overflow-y: visible;
+}
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.admin-table thead th {
+    background: var(--brand2);
+    color: white;
+    padding: 13px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: .03em;
+}
+.admin-table tbody tr { border-bottom: 1px solid #f0ece8; transition: .15s; }
+.admin-table tbody tr:hover { background: #faf7f5; }
+.admin-table td { padding: 12px 16px; color: #333; vertical-align: middle; }
+.admin-table td.question-cell { font-weight: 500; max-width: 260px; }
+.admin-table td.question-cell small { display: block; color: #999; font-size: 12px; margin-top: 2px; font-weight: 400; }
+
+.conf-bar { display: inline-block; height: 6px; border-radius: 3px; background: #ddd; width: 80px; vertical-align: middle; position: relative; overflow: hidden; }
+.conf-fill { height: 100%; border-radius: 3px; transition: .3s; }
+
+.badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 2px 9px;
+    vertical-align: middle;
+}
+.badge-pending  { background: #fff3cd; color: #856404; }
+.badge-reviewed { background: #d1ecf1; color: #0c5460; }
+.badge-trained  { background: #d4edda; color: #155724; }
+
+/* Action buttons in table */
+.act-btn {
+    padding: 5px 12px;
+    border-radius: 12px;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .15s;
+    margin-right: 4px;
+}
+.act-btn:active { transform: scale(.95); }
+.act-review  { background: #cce5ff; color: #004085; }
+.act-review:hover  { background: #b8daff; }
+.act-trained { background: #d4edda; color: #155724; }
+.act-trained:hover { background: #c3e6cb; }
+.act-delete  { background: #f8d7da; color: #721c24; }
+.act-delete:hover  { background: #f5c6cb; }
+
+.empty-admin { text-align: center; padding: 48px; color: #aaa; font-size: 15px; }
+
+.auth-overlay {
+    position: fixed;
+    inset: 52px 0 0 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+}
+.auth-overlay.hidden { display: none; }
+.auth-card {
+    width: min(420px, calc(100% - 32px));
+    background: white;
+    border-radius: 24px;
+    padding: 28px 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    text-align: left;
+}
+.auth-card h2 { margin-bottom: 8px; font-size: 22px; color: #3a2418; }
+.auth-card p { margin-bottom: 18px; color: #555; font-size: 14px; }
+.auth-card label {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: #444;
+}
+.auth-card input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px 14px;
+    border: 1px solid #d6d0cb;
+    border-radius: 14px;
+    font-size: 14px;
+    color: #333;
+}
+.auth-actions { display: flex; justify-content: space-between; gap: 10px; margin-top: 12px; }
+.auth-toggle { margin-top: 12px; text-align: center; }
+.auth-toggle a { color: var(--brand2); text-decoration: none; font-weight: 600; }
+.hidden-field { display: none; }
+.auth-error {
+    display: none;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: #fde2e1;
+    color: #8a1c1c;
+    font-size: 13px;
+}
+.logout-btn {
+    margin-left: 8px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #bd2130;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+.logout-btn:hover { background: #922026; }
+</style>
+</head>
+<body>
+
+<!-- ── TAB BAR ── -->
+<div class="tab-bar">
+    <button class="tab active" onclick="switchTab('chat')">💬 Chatbot</button>
+    <button class="tab" onclick="switchTab('admin')" id="admin-tab">
+        🗃 Admin Panel <span class="tab-badge" id="pending-badge" style="display:none">0</span>
+    </button>
+</div>
+
+<!-- Admin auth overlay -->
+<div id="admin-auth-overlay" class="auth-overlay hidden">
+    <div class="auth-card">
+        <h2 id="auth-title">Admin Login</h2>
+        <p id="auth-desc">Enter your admin credentials to continue.</p>
+        <div id="auth-error" class="auth-error" aria-live="assertive"></div>
+        <label>Username
+            <input id="admin-username" type="text" autocomplete="username" placeholder="admin" />
+        </label>
+        <label>Password
+            <input id="admin-password" type="password" autocomplete="current-password" placeholder="password" />
+        </label>
+        <label id="confirm-password-field" style="display: none;">Confirm Password
+            <input id="admin-password-confirm" type="password" autocomplete="new-password" placeholder="confirm password" />
+        </label>
+        <div class="auth-actions">
+            <button class="export-btn" id="auth-submit" onclick="submitAuth()">Login</button>
+            <button class="logout-btn" type="button" onclick="cancelAuth()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CHAT VIEW
+══════════════════════════════════════ -->
+<div class="view active" id="view-chat">
+<div class="chat-container">
+
+    <div class="header">
+        <h1>COMMUNICATE WITH AI CHATBOT</h1>
+    </div>
+
+    <!-- LEFT -->
+    <div class="chatbot-panel">
+        <div class="bot-card">
+            <div class="bot-avatar-container">
+                <img src="assets/images/bot_avatar.png" class="bot-avatar"
+                     onerror="this.style.background='linear-gradient(135deg,#8b695a,#6b4c3b)';this.style.borderRadius='50%'">
+            </div>
+            <div class="bot-status">
+                <h2 id="status">Ready</h2>
+            </div>
+            <div class="fallback-notice" id="fallback-notice">
+                ⚠️ Question saved for training review
+            </div>
+        </div>
+
+        <div class="control-buttons">
+            <button id="btn-en" class="control-btn">🎙 Speak English</button>
+            <button id="btn-ur" class="control-btn">🎙 اردو بولے</button>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="conversation-panel">
+        <div class="conversation-list" id="conversationList">
+            <div class="empty-state">Start speaking to begin the conversation…</div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     ADMIN VIEW
+══════════════════════════════════════ -->
+<div class="view" id="view-admin">
+<div class="admin-view">
+    <div class="admin-inner">
+
+        <h2 style="font-size:22px;font-weight:700;color:#3a2418;">🗃 Fallback Questions — Admin Panel</h2>
+
+        <!-- Stats -->
+        <div class="stats-row" id="stats-row">
+            <div class="stat-card warn">
+                <div class="stat-num" id="stat-total">—</div>
+                <div class="stat-lbl">Total Logged</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num" id="stat-pending">—</div>
+                <div class="stat-lbl">Pending Review</div>
+            </div>
+            <div class="stat-card good">
+                <div class="stat-num" id="stat-trained">—</div>
+                <div class="stat-lbl">Added to Training</div>
+            </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="admin-toolbar">
+            <button class="filter-btn active" onclick="filterQuestions('all', this)">All</button>
+            <button class="filter-btn" onclick="filterQuestions('0', this)">Pending</button>
+            <button class="filter-btn" onclick="filterQuestions('1', this)">Reviewed</button>
+            <button class="export-btn" onclick="exportQuestions()">⬇ Export for Training</button>
+            <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrap">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Question (Original)</th>
+                        <th>English Version</th>
+                        <th>Lang</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="questions-tbody">
+                    <tr><td colspan="9" class="empty-admin">Loading…</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+<script>
+// ─────────────────────────────────
+//  TAB SWITCHING
+// ─────────────────────────────────
+function switchTab(name) {
+    if (name === 'admin' && !isAdminAuthenticated()) {
+        showAuthOverlay();
+        name = 'chat';
+    }
+
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('view-' + name).classList.add('active');
+    // Find the clicked tab button and mark it active
+    document.querySelectorAll('.tab').forEach(t => {
+        if (t.getAttribute('onclick') && t.getAttribute('onclick').includes("'" + name + "'")) {
+            t.classList.add('active');
+        }
+    });
+    // Scroll admin to top when switching to it
+    if (name === 'admin') {
+        const adminView = document.getElementById('view-admin');
+        adminView.scrollTop = 0;
+        loadAdmin();
+    }
+}
+
+
+// ─────────────────────────────────
+//  CHAT LOGIC
+// ─────────────────────────────────
+let mediaRecorder, audioChunks = [], currentLang = "en";
+const statusDiv         = document.getElementById("status");
+const btnEn             = document.getElementById("btn-en");
+const btnUr             = document.getElementById("btn-ur");
+const conversationList  = document.getElementById("conversationList");
+const fallbackNotice    = document.getElementById("fallback-notice");
+
+async function initAudio() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+        mediaRecorder.onstop = async () => {
+            const blob = new Blob(audioChunks, { type: "audio/wav" });
+            audioChunks = [];
+            sendAudio(blob);
+        };
+    } catch (err) {
+        alert("Microphone access denied or unavailable.");
+        console.error(err);
+    }
+}
+initAudio();
+
+btnEn.onmousedown = () => startRecording("en", btnEn);
+btnUr.onmousedown = () => startRecording("ur", btnUr);
+btnEn.onmouseup = btnEn.onmouseleave = stopRecording;
+btnUr.onmouseup = btnUr.onmouseleave = stopRecording;
+
+// Touch support
+btnEn.ontouchstart = e => { e.preventDefault(); startRecording("en", btnEn); };
+btnUr.ontouchstart = e => { e.preventDefault(); startRecording("ur", btnUr); };
+btnEn.ontouchend = btnUr.ontouchend = stopRecording;
+
+function startRecording(lang, btn) {
+    if (!mediaRecorder || mediaRecorder.state === "recording") return;
+    currentLang = lang;
+    audioChunks = [];
+    mediaRecorder.start();
+    statusDiv.textContent = lang === "en" ? "Listening (English)…" : "سن رہا ہوں…";
+    btn.classList.add("recording");
+    fallbackNotice.style.display = "none";
+}
+
+function stopRecording() {
+    if (!mediaRecorder || mediaRecorder.state !== "recording") return;
+    mediaRecorder.stop();
+    statusDiv.textContent = "Processing…";
+    btnEn.classList.remove("recording");
+    btnUr.classList.remove("recording");
+}
+
+async function sendAudio(audioBlob) {
+    const formData = new FormData();
+    formData.append("audio", audioBlob, "recording.wav");
+    formData.append("language", currentLang);
+
+    try {
+        const response = await fetch("http://127.0.0.1:5000/process_audio", {
+            method: "POST",
+            body: formData
+        });
+        if (!response.ok) throw new Error("Server Error");
+        const data = await response.json();
+
+        addMessage("user", data.user_text);
+        addMessage("bot", data.bot_text, data.is_fallback);
+        playAudio(data.audio_base64);
+
+        // Show notice & update badge if fallback
+        if (data.is_fallback) {
+            fallbackNotice.style.display = "block";
+            updatePendingBadge();
+        }
+    } catch (error) {
+        console.error(error);
+        statusDiv.textContent = "Error processing request.";
+    }
+}
+
+function playAudio(base64Audio) {
+    statusDiv.textContent = "Speaking…";
+    const audio = new Audio("data:audio/mp3;base64," + base64Audio);
+    audio.onended = () => { statusDiv.textContent = "Ready"; };
+    audio.play();
+}
+
+function addMessage(role, text, isFallback = false) {
+    const empty = document.querySelector(".empty-state");
+    if (empty) empty.remove();
+    const div = document.createElement("div");
+    div.className = "message " + role + (isFallback && role === "bot" ? " fallback" : "");
+    div.textContent = text;
+    conversationList.appendChild(div);
+    conversationList.scrollTop = conversationList.scrollHeight;
+}
+
+
+// ─────────────────────────────────
+//  ADMIN LOGIC
+// ─────────────────────────────────
+let currentFilter = 'all';
+let authMode = null;
+
+async function loadAdmin() {
+    loadStats();
+    loadQuestions(currentFilter);
+}
+
+async function loadStats() {
+    try {
+        const res = await fetch('http://127.0.0.1:5000/admin/questions/stats');
+        const d = await res.json();
+        document.getElementById('stat-total').textContent   = d.total;
+        document.getElementById('stat-pending').textContent = d.pending;
+        document.getElementById('stat-trained').textContent = d.added_to_training;
+        updatePendingBadge(d.pending);
+    } catch(e) { console.error('Stats fetch failed', e); }
+}
+
+async function updatePendingBadge(count = null) {
+    if (count === null) {
+        try {
+            const res = await fetch('http://127.0.0.1:5000/admin/questions/stats');
+            const d = await res.json();
+            count = d.pending;
+        } catch(e) { return; }
+    }
+    const badge = document.getElementById('pending-badge');
+    if (count > 0) {
+        badge.textContent = count;
+        badge.style.display = 'inline-block';
+    } else {
+        badge.style.display = 'none';
+    }
+}
+
+function filterQuestions(filter, btn) {
+    currentFilter = filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    loadQuestions(filter);
+}
+
+function getStoredAdmin() {
+    try {
+        return JSON.parse(localStorage.getItem('admin_account'));
+    } catch (e) {
+        return null;
+    }
+}
+
+function isAdminAuthenticated() {
+    return sessionStorage.getItem('adminAuthenticated') === 'true';
+}
+
+function showAuthOverlay() {
+    const authOverlay = document.getElementById('admin-auth-overlay');
+    const errorBox = document.getElementById('auth-error');
+    errorBox.style.display = 'none';
+    document.getElementById('admin-username').value = '';
+    document.getElementById('admin-password').value = '';
+    document.getElementById('admin-password-confirm').value = '';
+    
+    const storedAdmin = getStoredAdmin();
+    // First time: show signup, After: show login only
+    authMode = storedAdmin ? 'login' : 'signup';
+    renderAuthMode();
+    authOverlay.classList.remove('hidden');
+}
+
+function hideAuthOverlay() {
+    document.getElementById('admin-auth-overlay').classList.add('hidden');
+}
+
+function renderAuthMode() {
+    const authTitle = document.getElementById('auth-title');
+    const authDesc = document.getElementById('auth-desc');
+    const authSubmit = document.getElementById('auth-submit');
+    const confirmField = document.getElementById('confirm-password-field');
+
+    if (authMode === 'signup') {
+        authTitle.textContent = 'Create Admin Account';
+        authDesc.textContent = 'Set up the admin account for this chatbot.';
+        authSubmit.textContent = 'Sign Up';
+        confirmField.style.display = 'block';
+    } else {
+        authTitle.textContent = 'Admin Login';
+        authDesc.textContent = 'Enter your admin credentials to continue.';
+        authSubmit.textContent = 'Login';
+        confirmField.style.display = 'none';
+    }
+}
+
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function showAuthError(message) {
+    const errorBox = document.getElementById('auth-error');
+    errorBox.textContent = message;
+    errorBox.style.display = 'block';
+}
+
+async function submitAuth() {
+    const username = document.getElementById('admin-username').value.trim();
+    const password = document.getElementById('admin-password').value;
+    const passwordConfirm = document.getElementById('admin-password-confirm').value;
+    const storedAdmin = getStoredAdmin();
+    const mode = authMode || (storedAdmin ? 'login' : 'signup');
+
+    if (!username || !password) {
+        showAuthError('Please enter both username and password.');
+        return;
+    }
+
+    // SIGNUP MODE - First time creation
+    if (mode === 'signup') {
+        if (!passwordConfirm) {
+            showAuthError('Please confirm your password.');
+            return;
+        }
+        if (password !== passwordConfirm) {
+            showAuthError('Passwords do not match.');
+            return;
+        }
+        const passwordHash = await hashPassword(password);
+        localStorage.setItem('admin_account', JSON.stringify({ username, passwordHash }));
+        sessionStorage.setItem('adminAuthenticated', 'true');
+        hideAuthOverlay();
+        switchTab('admin');
+        return;
+    }
+
+    // LOGIN MODE - Subsequent attempts
+    if (!storedAdmin) {
+        showAuthError('No admin account found. Please create one.');
+        authMode = 'signup';
+        renderAuthMode();
+        return;
+    }
+
+    const passwordHash = await hashPassword(password);
+    if (storedAdmin.username === username && storedAdmin.passwordHash === passwordHash) {
+        sessionStorage.setItem('adminAuthenticated', 'true');
+        hideAuthOverlay();
+        switchTab('admin');
+    } else {
+        showAuthError('Invalid username or password.');
+    }
+}
+
+function toggleAuthMode() {
+    // Auth mode switching disabled - login only
+    return;
+}
+
+function cancelAuth() {
+    hideAuthOverlay();
+    switchTab('chat');
+}
+
+function logoutAdmin() {
+    sessionStorage.removeItem('adminAuthenticated');
+    switchTab('chat');
+}
+
+async function loadQuestions(filter = 'all') {
+    const tbody = document.getElementById('questions-tbody');
+    tbody.innerHTML = '<tr><td colspan="7" class="empty-admin">Loading…</td></tr>';
+    try {
+        const url = filter === 'all'
+            ? 'http://127.0.0.1:5000/admin/questions'
+            : `http://127.0.0.1:5000/admin/questions?reviewed=${filter}`;
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (!data.length) {
+            tbody.innerHTML = '<tr><td colspan="7" class="empty-admin">No questions found.</td></tr>';
+            return;
+        }
+
+        tbody.innerHTML = data.map(q => {
+            const statusBadge = q.added_to_training
+                ? '<span class="badge badge-trained">Trained</span>'
+                : q.reviewed
+                    ? '<span class="badge badge-reviewed">Reviewed</span>'
+                    : '<span class="badge badge-pending">Pending</span>';
+
+            const actions = [];
+            if (!q.reviewed && !q.added_to_training) {
+                actions.push(`<button class="act-btn act-review" onclick="markReviewed(${q.id})">✓ Review</button>`);
+            }
+            if (!q.added_to_training) {
+                actions.push(`<button class="act-btn act-trained" onclick="markTrained(${q.id})">📚 Trained</button>`);
+            }
+            actions.push(`<button class="act-btn act-delete" onclick="deleteQuestion(${q.id})">🗑</button>`);
+
+            const date = new Date(q.timestamp).toLocaleString('en-PK', { dateStyle:'short', timeStyle:'short' });
+
+            return `<tr id="row-${q.id}">
+                <td style="color:#aaa;font-size:12px">${q.id}</td>
+                <td class="question-cell">
+                    ${escHtml(q.question)}
+                    <small>Lang: ${q.language.toUpperCase()}</small>
+                </td>
+                <td style="color:#555;font-size:13px">${escHtml(q.translated_en || q.question)}</td>
+                <td><span class="badge" style="background:#eee;color:#555">${q.language.toUpperCase()}</span></td>
+                <td style="font-size:12px;color:#999">${date}</td>
+                <td>${statusBadge}</td>
+                <td>${actions.join('')}</td>
+            </tr>`;
+        }).join('');
+    } catch(e) {
+        tbody.innerHTML = '<tr><td colspan="7" class="empty-admin">⚠️ Could not connect to server.</td></tr>';
+        console.error(e);
+    }
+}
+
+async function markReviewed(id) {
+    await fetch(`http://127.0.0.1:5000/admin/questions/${id}/review`, { method: 'PUT' });
+    loadAdmin();
+}
+
+async function markTrained(id) {
+    await fetch(`http://127.0.0.1:5000/admin/questions/${id}/trained`, { method: 'PUT' });
+    loadAdmin();
+}
+
+async function deleteQuestion(id) {
+    if (!confirm('Delete this question?')) return;
+    await fetch(`http://127.0.0.1:5000/admin/questions/${id}`, { method: 'DELETE' });
+    document.getElementById('row-' + id)?.remove();
+    loadStats();
+}
+
+function exportQuestions() {
+    window.open('http://127.0.0.1:5000/admin/questions/export', '_blank');
+}
+
+function escHtml(str) {
+    return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// Load badge count on startup
+updatePendingBadge();
+</script>
+</body>
+</html>
