@@ -1,9 +1,9 @@
-setuptools==67.8.0
-gunicorn
-flask
-flask-cors
-SpeechRecognition
-gTTS
+flask==2.3.3
+flask-cors==4.0.0
+requests==2.31.0
+SpeechRecognition==3.10.0
+gTTS==2.4.0
 googletrans==4.0.0rc1
-pydub
-requests
+pydub==0.25.1
+gunicorn==21.2.0
+setuptools==67.8.0
