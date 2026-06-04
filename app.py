@@ -14,20 +14,18 @@ from pydub import AudioSegment
 app = Flask(__name__)
 CORS(app)
 
-# Rasa Endpoints
-RASA_URL       = "http://localhost:5005/webhooks/rest/webhook"
-RASA_PARSE_URL = "http://localhost:5005/model/parse"
+# Rasa Endpoints - using environment variables for Railway deployment
+RASA_HOST      = os.getenv("RASA_URL", "http://localhost:5005")
+RASA_URL       = f"{RASA_HOST}/webhooks/rest/webhook"
+RASA_PARSE_URL = f"{RASA_HOST}/model/parse"
 
 # Database path — always next to this app.py file
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH  = os.path.join(BASE_DIR, "unknown_questions.db")
 
 # Confidence threshold — questions below this are logged as fallback
-FALLBACK_THRESHOLD = 0.10  # Low because model isn't retrained — only truly unknown questions (conf < 0.10) get logged
+FALLBACK_THRESHOLD = 0.10
 
-# These must match the EXACT fallback reply your Rasa bot sends.
-# Keep this list tight — broad phrases cause false positives.
-# Add/remove phrases to match what your bot actually says when it can't answer.
 FALLBACK_PHRASES = [
     "i didn't quite understand",
     "i don't understand",
@@ -35,7 +33,7 @@ FALLBACK_PHRASES = [
     "i didn't get that",
     "could you rephrase",
     "i cannot help with that",
-    "your question has been recorded",   # our own fallback action reply
+    "your question has been recorded",
 ]
 
 # Initialize tools
@@ -96,12 +94,6 @@ def log_unknown_question(question, language, translated_en, detected_intent, con
 def query_rasa(text):
     """
     Send message to Rasa and determine if it's a fallback.
-
-    Fallback is ONLY triggered by two reliable signals:
-      1. Intent confidence is below FALLBACK_THRESHOLD
-      2. The bot's reply text matches a known fallback phrase
-
-    Everything else is trusted as a valid response.
     Returns (bot_reply, intent_name, confidence, is_fallback).
     """
     bot_reply   = "Sorry, I didn't understand that."
@@ -111,7 +103,7 @@ def query_rasa(text):
 
     # ── Step 1: get intent confidence from /model/parse ──
     try:
-        r = requests.post(RASA_PARSE_URL, json={"text": text}, timeout=5)
+        r = requests.post(RASA_PARSE_URL, json={"text": text}, timeout=10)
         parsed      = r.json()
         top_intent  = parsed.get("intent", {})
         intent_name = top_intent.get("name", "unknown")
@@ -125,17 +117,15 @@ def query_rasa(text):
             print(f"[RASA] Low confidence ({confidence:.2f}) → fallback")
 
     except Exception as e:
-        # /model/parse is down — don't assume fallback, just warn
         print(f"[RASA PARSE WARNING] /model/parse unreachable: {e}")
 
     # ── Step 2: get bot reply from webhook ──
     try:
-        r2   = requests.post(RASA_URL, json={"sender": "user", "message": text}, timeout=5)
+        r2   = requests.post(RASA_URL, json={"sender": "user", "message": text}, timeout=10)
         data = r2.json()
         if data:
             bot_reply = data[0].get("text", bot_reply)
         else:
-            # Empty response means no story/rule matched → definite fallback
             is_fallback = True
             print("[RASA] Empty webhook response → fallback")
     except Exception as e:
@@ -144,7 +134,6 @@ def query_rasa(text):
         bot_reply = "Rasa server is down."
 
     # ── Step 3: reply text safety net ──
-    # Only triggers if the bot actually replied with a fallback phrase
     if any(phrase in bot_reply.lower() for phrase in FALLBACK_PHRASES):
         is_fallback = True
         print(f"[RASA] Fallback phrase detected in reply")
@@ -196,11 +185,11 @@ def process_audio():
         rasa_input = translated_en
         print(f"[TRANSLATE] Urdu → English: {rasa_input}")
 
-    # 4. Single Rasa call — gets reply + intent + fallback flag together
+    # 4. Single Rasa call
     bot_response_en, detected_intent, confidence, is_fallback = query_rasa(rasa_input)
     print(f"[RASA] Response: {bot_response_en}")
 
-    # 5. Log to DB and OVERRIDE response if it's a fallback
+    # 5. Log to DB and override response if fallback
     if is_fallback:
         log_unknown_question(
             question=user_text,
@@ -209,13 +198,12 @@ def process_audio():
             detected_intent=detected_intent,
             confidence=confidence
         )
-        # Replace wrong Rasa answer with a proper sorry message
         if lang_code == 'ur':
             bot_response_en = "معذرت، میں آپ کا سوال نہیں سمجھ سکا۔ براہ کرم دوسرا سوال پوچھیں۔"
         else:
             bot_response_en = "I'm sorry, I don't have an answer for that. Please try asking another question."
 
-    # 6. Translate response back to Urdu if needed (only for non-fallback)
+    # 6. Translate response back to Urdu if needed
     final_response = bot_response_en
     if lang_code == 'ur' and not is_fallback:
         final_response = translator.translate(bot_response_en, src='en', dest='ur').text
@@ -245,7 +233,6 @@ def process_audio():
 
 @app.route('/admin/questions', methods=['GET'])
 def get_questions():
-    """Return all unknown questions. Optional ?reviewed=0|1 filter."""
     reviewed_filter = request.args.get('reviewed')
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -266,7 +253,6 @@ def get_questions():
 
 @app.route('/admin/questions/stats', methods=['GET'])
 def get_stats():
-    """Return summary stats for the admin dashboard."""
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute("SELECT COUNT(*) FROM unknown_questions")
@@ -281,7 +267,6 @@ def get_stats():
 
 @app.route('/admin/questions/<int:qid>/review', methods=['PUT'])
 def mark_reviewed(qid):
-    """Mark a question as reviewed."""
     conn = sqlite3.connect(DB_PATH)
     conn.execute("UPDATE unknown_questions SET reviewed=1 WHERE id=?", (qid,))
     conn.commit()
@@ -291,7 +276,6 @@ def mark_reviewed(qid):
 
 @app.route('/admin/questions/<int:qid>/trained', methods=['PUT'])
 def mark_trained(qid):
-    """Mark a question as added to training data."""
     conn = sqlite3.connect(DB_PATH)
     conn.execute("UPDATE unknown_questions SET added_to_training=1, reviewed=1 WHERE id=?", (qid,))
     conn.commit()
@@ -301,7 +285,6 @@ def mark_trained(qid):
 
 @app.route('/admin/questions/<int:qid>', methods=['DELETE'])
 def delete_question(qid):
-    """Delete a logged question."""
     conn = sqlite3.connect(DB_PATH)
     conn.execute("DELETE FROM unknown_questions WHERE id=?", (qid,))
     conn.commit()
@@ -311,7 +294,6 @@ def delete_question(qid):
 
 @app.route('/admin/questions/export', methods=['GET'])
 def export_questions():
-    """Export unreviewed questions as plain text for Rasa NLU training."""
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
@@ -338,4 +320,5 @@ def export_questions():
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", debug=False, port=port)
