@@ -19,9 +19,8 @@ RASA_HOST      = os.getenv("RASA_URL", "http://localhost:5005")
 RASA_URL       = f"{RASA_HOST}/webhooks/rest/webhook"
 RASA_PARSE_URL = f"{RASA_HOST}/model/parse"
 
-# Database path — always next to this app.py file
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH  = os.path.join(BASE_DIR, "unknown_questions.db")
+# /tmp is always writable on Railway (and any container runtime)
+DB_PATH = os.getenv("DB_PATH", "/tmp/unknown_questions.db")
 
 # Confidence threshold — questions below this are logged as fallback
 FALLBACK_THRESHOLD = 0.10
