@@ -10,11 +10,17 @@ import speech_recognition as sr
 from gtts import gTTS
 from googletrans import Translator
 from pydub import AudioSegment
+import pydub.utils
 import imageio_ffmpeg
+
 _ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
 AudioSegment.converter = _ffmpeg_exe
-AudioSegment.ffmpeg    = _ffmpeg_exe
-AudioSegment.ffprobe   = _ffmpeg_exe
+_original_which = pydub.utils.which
+def _patched_which(name):
+    if name in ("ffmpeg", "ffprobe", "avconv", "avprobe"):
+        return _ffmpeg_exe
+    return _original_which(name)
+pydub.utils.which = _patched_which
 
 app = Flask(__name__)
 CORS(app)
