@@ -7,3 +7,4 @@ googletrans==4.0.0rc1
 pydub==0.25.1
 gunicorn==21.2.0
 setuptools==67.8.0
+imageio-ffmpeg
