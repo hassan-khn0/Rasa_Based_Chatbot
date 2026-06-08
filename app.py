@@ -11,7 +11,10 @@ from gtts import gTTS
 from googletrans import Translator
 from pydub import AudioSegment
 import imageio_ffmpeg
-AudioSegment.converter = imageio_ffmpeg.get_ffmpeg_exe()
+_ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
+AudioSegment.converter = _ffmpeg_exe
+AudioSegment.ffmpeg    = _ffmpeg_exe
+AudioSegment.ffprobe   = _ffmpeg_exe
 
 app = Flask(__name__)
 CORS(app)
@@ -162,6 +165,8 @@ def process_audio():
         audio.export(wav_io, format="wav")
         wav_io.seek(0)
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         return jsonify({"error": f"Audio conversion failed: {str(e)}"}), 500
 
     # 2. Speech to Text
