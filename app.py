@@ -10,6 +10,8 @@ import speech_recognition as sr
 from gtts import gTTS
 from googletrans import Translator
 from pydub import AudioSegment
+import imageio_ffmpeg
+AudioSegment.converter = imageio_ffmpeg.get_ffmpeg_exe()
 
 app = Flask(__name__)
 CORS(app)
